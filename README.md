@@ -146,9 +146,11 @@ Diese Fragen sind kein Nebenthema, sondern Teil der gestalterischen Praxis.
 
 Custom GPTs von OpenAI liefern bessere Ergebnisse, wenn du als Nutzer eingeloggt bist.
 
-**ChatGPT:** Lege ein Custom GPT mit dem Namen **Folkwang_Timers** an und lade die Trainingsdateien aus [`GPT_Dataset_Pathfinder/`](./GPT_Dataset_Pathfinder/) bzw. dem aktualisierten Dataset-ZIP (siehe [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](./NON_MARKDOWN_MIGRATION_CHECKLIST.md)) als Wissen hoch.
+**[→ Folkwang_Timers Custom GPT direkt öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)**
 
-**[→ Custom GPT Dataset (ZIP)](./GPT_Dataset_Pathfinder.zip)** — System Prompt + Trainingsdateien *(ZIP bei Änderungen neu packen; siehe [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](./NON_MARKDOWN_MIGRATION_CHECKLIST.md).)*
+Zum **Nachbauen oder Erweitern** eines eigenen GPT: Trainingsdateien aus [`Dataset_Timers/`](./Dataset_Timers/) bzw. [`Dataset_Timers.zip`](./Dataset_Timers.zip) als Wissen einbinden — siehe [`05_custom_gpt/`](./05_custom_gpt/README.md) und [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](./NON_MARKDOWN_MIGRATION_CHECKLIST.md).
+
+**[→ Custom GPT Dataset (ZIP)](./Dataset_Timers.zip)** — System Prompt + Trainingsdateien *(ZIP bei Änderungen neu packen; siehe [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](./NON_MARKDOWN_MIGRATION_CHECKLIST.md).)*
 
 ---
 

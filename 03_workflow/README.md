@@ -18,6 +18,8 @@ Der gesamte Prozess — von der Idee bis zur laufenden Installation — besteht 
 └─────────────────────────────────────────────────────┘
 ```
 
+**GPT:** [Folkwang_Timers in ChatGPT öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)
+
 ---
 
 ## [Schritt 1 · GPT-Anfrage formulieren](./schritt_1_gpt_anfrage.md)

@@ -6,4 +6,6 @@ Custom GPT name: **Folkwang_Timers**. Hardware: **Arduino Nano**, DS3231, VL53L0
 
 ## Sync
 
-When **`claude_pathfinder/`** or **`GPT_Dataset_Pathfinder/`** changes, re-copy **`.context/`** and **`.cline/rules/`** from the canonical Claude bundle (or from the dataset), then adjust Cline-only text if needed.
+When **`claude_pathfinder/`** or **`Dataset_Timers/`** changes, re-copy **`.context/`** and **`.cline/rules/`** from the canonical Claude bundle (or from the dataset), then adjust Cline-only text if needed.
+
+**Workshop GPT:** [Folkwang_Timers (ChatGPT)](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)

@@ -1,6 +1,6 @@
 # System Prompt · Erklärt (Folkwang_Timers)
 
-Der System Prompt des Custom GPT **Folkwang_Timers** besteht aus mehreren Blöcken — siehe **`GPT_Dataset_Pathfinder/system-prompt.txt`** und **`claude_pathfinder/.claude/rules/07-generator-contract.md`**. Hier die Einordnung für Lehrende.
+Der System Prompt des Custom GPT **Folkwang_Timers** besteht aus mehreren Blöcken — siehe **`Dataset_Timers/system-prompt.txt`** und **`claude_pathfinder/.claude/rules/07-generator-contract.md`**. Hier die Einordnung für Lehrende.
 
 ---
 

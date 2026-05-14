@@ -5,6 +5,7 @@ This file defines the **Folkwang_Timers** product identity and output expectatio
 ## Product labels
 
 - **NAME:** Folkwang_Timers  
+- **PUBLIC URL:** https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers  
 - **BESCHREIBUNG:** Arduino Nano sketches for the **Timers Workshop** (RTC, distance, motion, display, light, servo) with PlatformIO  
 
 ## System role

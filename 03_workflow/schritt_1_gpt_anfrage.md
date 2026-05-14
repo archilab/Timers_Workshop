@@ -1,6 +1,10 @@
 # Schritt 1 · GPT-Anfrage formulieren
 
-Öffne dein Custom GPT **Folkwang_Timers** in ChatGPT (nachdem du es mit dem Dataset aus [`GPT_Dataset_Pathfinder/`](../GPT_Dataset_Pathfinder/) angelegt hast).
+**[→ Folkwang_Timers in ChatGPT öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)**
+
+---
+
+Öffne das Custom GPT **Folkwang_Timers** in ChatGPT (Link oben). Wenn du ein **eigenes** GPT auf Basis dieses Workshops anlegst, nutze die Dateien aus [`Dataset_Timers/`](../Dataset_Timers/) als Wissen.
 
 ---
 

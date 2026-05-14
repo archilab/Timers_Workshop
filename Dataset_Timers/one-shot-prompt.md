@@ -2,6 +2,8 @@
 
 Compressed bootstrap for the Custom GPT **Folkwang_Timers**. Full APIs: `context-library-*.md` in this folder.
 
+**Live GPT:** https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers
+
 **Priority:** `system-prompt.txt` (copy of `07-generator-contract`) → `rules-meta-layer.md` + `rules-validation.md` → `context-library-index.md` → `03-i2c-time-display` rules in the Claude bundle → `sample-*.cpp` last.
 
 ---

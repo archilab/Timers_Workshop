@@ -19,6 +19,10 @@ Workshop prose may be **German**. Code comments may be German or English.
 4. [claude_pathfinder/.claude/rules/03-i2c-time-display.md](claude_pathfinder/.claude/rules/03-i2c-time-display.md)
 5. `sample-*.cpp` in `.context/` are **patterns only**; rules override samples.
 
+## Public ChatGPT GPT
+
+- [Folkwang_Timers](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)
+
 ## Build
 
 - `pio run` next to `platformio.ini`

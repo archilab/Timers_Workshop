@@ -14,4 +14,6 @@ Self-contained bundle for [Claude Code](https://code.claude.com/docs): **`CLAUDE
 
 ## Sync from repo
 
-When **`GPT_Dataset_Pathfinder/`** changes, copy affected files into **`.context/`** and update **`07-generator-contract.md`** if the product contract changed.
+When **`Dataset_Timers/`** changes, copy affected files into **`.context/`** and update **`07-generator-contract.md`** if the product contract changed.
+
+**Workshop GPT:** [Folkwang_Timers (ChatGPT)](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)

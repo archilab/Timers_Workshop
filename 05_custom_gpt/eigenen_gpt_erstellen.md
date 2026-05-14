@@ -1,5 +1,7 @@
 # Eigenen Custom GPT erstellen
 
+**Öffentlicher Workshop-GPT:** [Folkwang_Timers in ChatGPT öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)
+
 Der System Prompt dieses Workshops ist öffentlich — damit du ihn als Vorlage für deinen eigenen Custom GPT verwenden kannst. Hier ist der Prozess Schritt für Schritt.
 
 ---
