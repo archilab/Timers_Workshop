@@ -1,6 +1,6 @@
 # Library context — Timers Workshop / Folkwang_Timers
 
-Diese Dateien liefern **offlinefähigen API-Kontext** für alle in `template-platformio.ini` (`lib_deps`) referenzierten Bibliotheken.
+Diese Dateien liefern **offlinefähigen API-Kontext** für alle in `template-platformio.ini` (`lib_deps`) referenzierten Bibliotheken — Umfang analog zu **`context-library-adafruit-mpu6050.md`** (Methoden, Enums, typische Muster).
 
 **Integration:** Siehe **[context-example-scripts.md](./context-example-scripts.md)** für Upload-Reihenfolge und Priorität.
 
