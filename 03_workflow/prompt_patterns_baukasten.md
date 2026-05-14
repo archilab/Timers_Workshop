@@ -31,7 +31,7 @@ und daraus entsteht [Output].
 Direkte Übersetzung eines Wertes.
 
 ```txt
-Die Entfernung meiner Hand soll direkt einen Farbverlauf von Blau zu Rot steuern.
+Die Entfernung einer Hand zur Sensorfläche soll direkt einen Farbverlauf von Blau zu Rot steuern.
 ```
 
 👉 Prinzip: 1:1 Beziehung
@@ -43,7 +43,7 @@ Die Entfernung meiner Hand soll direkt einen Farbverlauf von Blau zu Rot steuern
 Ein Ereignis wird ausgelöst, wenn ein Wert überschritten wird.
 
 ```txt
-Wenn ich meine Hand schnell bewege, soll ein Lichtimpuls ausgelöst werden.
+Wenn man die Hand schnell bewegt, soll ein Lichtimpuls ausgelöst werden.
 ```
 
 👉 Prinzip: Zustand → Ereignis

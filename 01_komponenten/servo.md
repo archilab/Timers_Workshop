@@ -18,7 +18,7 @@ Ein Servo ist ein Motor, der sich auf einen bestimmten Winkel dreht und dort hä
 - Ein Zeiger zeigt die Intensität einer Bewegung an
 - Ein mechanisches Element reagiert auf das Netzwerk
 
-## Wie er im Prompt beschrieben wird
+## Wie man ihn im Prompt beschreibt
 
 > „...ein Servo dreht sich entsprechend der Neigung..."
 > „...die Position des Motors hängt von der Geste ab..."

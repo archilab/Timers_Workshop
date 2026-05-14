@@ -11,12 +11,12 @@ Im Workshop hängt der Sensor am **I²C-Bus** mit der Standardadresse **0x29** (
 ## Für Einsteiger: Wie liest man die Werte?
 
 - Der Sensor sendet ein **Lichtsignal** aus und wertet aus, wie schnell es **zurückkommt**. Daraus berechnet die Library eine **Entfernung**.
-- **Ein Messwert** ist typischerweise eine **ganze Zahl** in **mm** (z. B. `187` mm). Sehr große oder spezielle Werte können auf **Timeout**, **kein Ziel** oder **schwierige Oberfläche** hindeuten — im Code solltest du das mit abfangen (z. B. `setTimeout`, Prüfung auf `timeoutOccurred()`).
+- **Ein Messwert** ist typischerweise eine **ganze Zahl** in **mm** (z. B. `187` mm). Sehr große oder spezielle Werte können auf **Timeout**, **kein Ziel** oder **schwierige Oberfläche** hindeuten — im Code sollte man das mit abfangen (z. B. `setTimeout`, Prüfung auf `timeoutOccurred()`).
 - **Nicht jedes Material** reflektiert gleich gut: sehr dunkle, stark absorbierende oder stark schräge Flächen können die Messung erschweren. **Glatte, helle** Ziele in **senkrechter** Ausrichtung vor den Sensor zu halten ist am leichtesten.
 
 ---
 
-## Wofür du den VL53L0X nutzt
+## Wofür man den VL53L0X nutzt
 
 - **Nähe** steuert **Helligkeit** oder Farbe am **NeoPixel-Ring**  
 - **Abstand** steuert einen **Servo-Winkel** (z. B. nah = Tür zu, weit = Tür auf — je nach Idee)  

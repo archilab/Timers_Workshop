@@ -2,7 +2,7 @@
 
 ![NeoPixel LED-Ring 5V RGB WS2812B, 12 LEDs, 37 mm](./bilder/led-ring-5v-rgb-ws2812b-12-bit-37mm-631649.webp)
 
-Im Workshop sitzt ein **NeoPixel LED Ring 5V RGB WS2812B** mit **12** einzeln ansteuerbaren **RGB-LEDs**. Jede „Einheit“ am Ring heißt im Code ein **Pixel** — nummeriert von **0** bis **11**. Du kannst jede LED in Farbe und Helligkeit setzen, unabhängig von den anderen.
+Im Workshop sitzt ein **NeoPixel LED Ring 5V RGB WS2812B** mit **12** einzeln ansteuerbaren **RGB-LEDs**. Jede „Einheit“ am Ring heißt im Code ein **Pixel** — nummeriert von **0** bis **11**. Man kann jede LED in Farbe und Helligkeit setzen, unabhängig von den anderen.
 
 Die **Datenleitung** geht am Nano an **D6** (digitaler Ausgang), festgelegt in `02-hardware-pins.md`.
 
@@ -17,7 +17,7 @@ Die **Datenleitung** geht am Nano an **D6** (digitaler Ausgang), festgelegt in `
 ## Für Einsteiger: Wie funktioniert der Ring?
 
 - **Ein Datenpin:** Alle LEDs hängen **in einer Kette** hintereinander. Der Nano schickt ein **digitales Signal** in eine Richtung; **Pixel 0** nimmt seinen Farbwert und leitet den Rest an **Pixel 1** weiter usw.
-- **WS2812B:** Jede LED enthält einen winzigen Chip. Deshalb brauchst du **keine** extra „Clock“-Leitung — nur **Daten** + **Strom** + **Masse**.
+- **WS2812B:** Jede LED enthält einen winzigen Chip. Deshalb braucht man **keine** extra „Clock“-Leitung — nur **Daten** + **Strom** + **Masse**.
 - **RGB:** Pro Pixel gibt es die Kanäle **Rot**, **Grün**, **Blau** (je 0–255). **Weiß** entsteht durch **gleiche** Werte, z. B. `Color(b, b, b)` — es gibt **keinen** separaten Weißkanal wie bei manchen RGBW-Streifen.
 
 ---
@@ -30,7 +30,7 @@ Die **Datenleitung** geht am Nano an **D6** (digitaler Ausgang), festgelegt in `
 
 ---
 
-## Wie du ihn im Prompt beschreibst
+## Wie man ihn im Prompt beschreibt
 
 > „…die LEDs am Ring leuchten heller, wenn…"  
 > „…der Ring zeigt die Intensität der Bewegung…"  

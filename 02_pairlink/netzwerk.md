@@ -13,7 +13,7 @@ Der **Timers Workshop** nutzt **kein WLAN** und keine WebSockets. Stattdessen ve
 
 ## Ablauf im Code
 
-1. `Serial.begin(115200);` falls du Meldungen brauchst.  
+1. `Serial.begin(115200);` falls man Meldungen braucht.  
 2. `Wire.begin();` **einmal** in `setup()`.  
 3. Danach `begin()` der Module in sinnvoller Reihenfolge (z. B. RTC, Display, ToF, MPU).
 

@@ -1,6 +1,6 @@
 # Arduino Nano
 
-Der **Arduino Nano** (hier: klassischer **ATmega328P**, 5V) ist der Mikrocontroller des **Timers Workshop**. Er führt deinen Sketch aus und spricht über **I²C** und **digitale Pins** mit RTC, Sensoren, OLED, NeoPixel und Servo.
+Der **Arduino Nano** (hier: klassischer **ATmega328P**, 5V) ist der Mikrocontroller des **Timers Workshop**. Er führt den Sketch aus und spricht über **I²C** und **digitale Pins** mit RTC, Sensoren, OLED, NeoPixel und Servo.
 
 ## Wichtige Anschlüsse
 

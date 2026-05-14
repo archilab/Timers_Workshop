@@ -24,7 +24,7 @@ Der gesamte Prozess — von der Idee bis zur laufenden Installation — besteht 
 
 ## [Schritt 1 · GPT-Anfrage formulieren](./schritt_1_gpt_anfrage.md)
 
-Wie beschreibe ich meine Idee so, dass der GPT versteht was ich will? Was muss ich angeben, was nicht? Mit Prompt-Vorlagen und Beispielen.
+Wie formuliert man eine Idee so, dass der GPT versteht, was gemeint ist? Was muss man angeben, was nicht? Mit Prompt-Vorlagen und Beispielen.
 
 **→ [Beispielprompts (Einstieg bis Experiment)](./pathfinder_prompts.md)** — stufenweise Prompt-Ideen zum Kopieren, Variieren und Kombinieren.
 
@@ -40,4 +40,4 @@ Upload starten, Serial Monitor lesen, häufige Probleme erkennen und lösen. Bei
 
 ---
 
-Die drei Schritte sind in den [Beispielen](../04_beispiele/README.md) jeweils vollständig dokumentiert — einmal komplett durchgehen, danach läuft der Prozess aus dem Gedächtnis.
+Die drei Schritte sind in den [Beispielen](../04_beispiele/README.md) jeweils vollständig dokumentiert — einmal komplett durchgearbeitet, läuft der Prozess anschließend aus dem Gedächtnis.

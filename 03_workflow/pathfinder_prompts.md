@@ -1,6 +1,6 @@
 # Timers Workshop – Beispielprompts
 
-Kurze **Beispielprompts** für **Folkwang_Timers** (Arduino Nano, DS3231, VL53L0X, SSD1306, MPU6050, NeoPixel, Servo). Passe Formulierungen an deine eigene Idee an.
+Kurze **Beispielprompts** für **Folkwang_Timers** (Arduino Nano, DS3231, VL53L0X, SSD1306, MPU6050, NeoPixel, Servo). Formulierungen kann man an die eigene Idee anpassen.
 
 ---
 
@@ -20,7 +20,7 @@ Kurze **Beispielprompts** für **Folkwang_Timers** (Arduino Nano, DS3231, VL53L0
 
 ## Bewegung
 
-> „Wenn ich das Board neige (MPU6050), soll der Servo zwischen 0° und 180° mitfahren. MPU an 0x69."
+> „Wenn man das Board neigt (MPU6050), soll der Servo zwischen 0° und 180° mitfahren. MPU an 0x69."
 
 ---
 

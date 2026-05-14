@@ -1,6 +1,6 @@
 # 01 · Komponenten
 
-Der **Timers Workshop** nutzt mehrere Module auf einem **Arduino Nano**. Du musst nicht jedes Datenblatt lesen — aber eine kurze Vorstellung hilft beim Prompten mit **Folkwang_Timers**.
+Der **Timers Workshop** nutzt mehrere Module auf einem **Arduino Nano**. Man muss nicht jedes Datenblatt lesen — aber eine kurze Vorstellung hilft beim Prompten mit **Folkwang_Timers**.
 
 ---
 

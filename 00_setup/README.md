@@ -1,15 +1,15 @@
 # Setup — Schritt für Schritt (Einsteiger)
 
-Bevor du Code auf den **Arduino Nano** überträgst, richtest du einmalig deinen Computer ein. Das dauert etwa **15–20 Minuten** und musst du nur einmal machen.
+Bevor man Code auf den **Arduino Nano** überträgt, richtet man einmalig den Computer ein. Das dauert etwa **15–20 Minuten** und ist nur **einmal** nötig.
 
 ---
 
-## Was du am Ende haben wirst
+## Was man am Ende bereit hat
 
 | Teil | Wofür |
 |------|--------|
 | **Git** | Wird von **PlatformIO** gebraucht, um Bibliotheken von GitHub zu laden. |
-| **Visual Studio Code (VS Code)** | Der Editor für deinen Code. |
+| **Visual Studio Code (VS Code)** | Der Editor für den Code. |
 | **PlatformIO** | Erweiterung in VS Code: baut das Projekt, lädt Bibliotheken, lädt den Code auf den Arduino Nano. |
 | **USB-Treiber** | Damit Windows/macOS den Arduino Nano am USB-Kabel erkennt. |
 
@@ -19,17 +19,17 @@ Bevor du Code auf den **Arduino Nano** überträgst, richtest du einmalig deinen
 
 **Git** ist die Basis-Software für Versionskontrolle. **PlatformIO braucht Git**, um viele Bibliotheken automatisch von GitHub zu beziehen — ohne Git schlagen Builds oft fehl.
 
-1. Öffne: [https://git-scm.com/install/](https://git-scm.com/install/)
-2. Wähle dein Betriebssystem (Windows, macOS, Linux) und folge der Anleitung. Bestätige alle vorgeschlagenen Optionen während dem Installationsprozess.
+1. Öffnen: [https://git-scm.com/install/](https://git-scm.com/install/)
+2. Das eigene Betriebssystem (Windows, macOS, Linux) wählen und der Anleitung folgen. Alle vorgeschlagenen Optionen während des Installationsprozesses bestätigen.
 
 ---
 
 ## Schritt 2 — Visual Studio Code installieren
 
-VS Code ist der **Editor**, in dem du Code bearbeitest und Uploads startest.
+VS Code ist der **Editor**, in dem man Code bearbeitet und Uploads startet.
 
-1. Öffne: [https://code.visualstudio.com](https://code.visualstudio.com)
-2. Installer für dein Betriebssystem herunterladen und installieren.
+1. Öffnen: [https://code.visualstudio.com](https://code.visualstudio.com)
+2. Installer für das eigene Betriebssystem herunterladen und installieren.
 
 **Optional:** Wer die Oberfläche **weniger überladen** möchte, kann [VS Code vereinfachen](vscode-oberflaeche.md) — Darstellungsdesign, Aktivitätsleiste und untere Leiste Schritt für Schritt (mit Screenshots).
 
@@ -45,7 +45,7 @@ VS Code ist der **Editor**, in dem du Code bearbeitest und Uploads startest.
 4. Auf **Installieren** klicken.
 5. Wenn VS Code danach einen **Neustart** verlangt: zustimmen.
 
-Nach der Installation siehst du links das **PlatformIO-Symbol** (Kopf einer Ameise).
+Nach der Installation sieht man links das **PlatformIO-Symbol** (Kopf einer Ameise).
 
 **Hinweis:** Beim **ersten** Projekt lädt PlatformIO Werkzeuge nach — das kann **2–3 Minuten** dauern, das ist normal.
 
@@ -55,7 +55,7 @@ Nach der Installation siehst du links das **PlatformIO-Symbol** (Kopf einer Amei
 
 Der Arduino Nano spricht über einen **USB-zu-UART-Chip** mit dem PC. Dafür braucht das Betriebssystem einen **Treiber**.
 
-Workshop-Nanos nutzen häufig **CH340G** oder **FT232**; manche Clones **CP2102**. Installiere den Treiber, den dein Geräte-Manager oder die Board-Beschreibung nennt (z. B. [WCH CH341/CH340](http://www.wch-ic.com/downloads/CH341SER_ZIP.html) oder [Silicon Labs CP210x](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)).
+Workshop-Nanos nutzen häufig **CH340G** oder **FT232**; manche Clones **CP2102**. Den Treiber installieren, den der Geräte-Manager oder die Board-Beschreibung nennt (z. B. [WCH CH341/CH340](http://www.wch-ic.com/downloads/CH341SER_ZIP.html) oder [Silicon Labs CP210x](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)).
 
 ### macOS (Ventura und neuer)
 
@@ -78,11 +78,11 @@ Wenn kein **COM-Port** erscheint: **Geräte-Manager** öffnen — unter **Anschl
 
 ## Schritt 5 — Erstes Projekt öffnen und testen
 
-So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
+So prüft man, ob **alles zusammenspielt**, bevor man mit dem Workshop startet.
 
 ### Projektordner öffnen
 
-1. Lege den **Workshop-Ordner** auf deinen Rechner (z. B. per `git clone` oder **Code → Download ZIP** auf GitHub). Navigiere darin zu:  
+1. Den **Workshop-Ordner** auf den Rechner legen (z. B. per `git clone` oder **Code → Download ZIP** auf GitHub). Im Ordner navigieren zu:  
    `04_beispiele/beispiel_01_geste_licht/code/`
 2. In VS Code: **Datei → Ordner öffnen** → genau diesen Ordner **`code`** wählen (der enthält die `platformio.ini`).
 3. PlatformIO erkennt das Projekt und lädt beim ersten Mal die Bibliotheken — wieder **einige Minuten** warten.
@@ -91,13 +91,13 @@ So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
 
 1. Arduino Nano per USB angeschlossen lassen.
 2. Unten in der blauen Leiste auf den **Pfeil nach rechts** (**Upload**) klicken — oder in der PlatformIO-Seitenleiste **Upload**.
-3. Im **Terminal** unten siehst du den Ablauf. Erfolg endet oft mit **`SUCCESS`**.
+3. Im **Terminal** unten sieht man den Ablauf. Erfolg endet oft mit **`SUCCESS`**.
 
 ### Serial Monitor (Ausgabe lesen)
 
 1. Unten auf das **Stecker-Symbol** (**Serial Monitor**) klicken.
 2. **Baudrate:** `115200` wählen (steht auch in der Workshop-`platformio.ini`).
-3. Du siehst Textausgaben vom Arduino Nano (z. B. Sensor- oder Zeitstatus).
+3. Es erscheinen Textausgaben vom Arduino Nano (z. B. Sensor- oder Zeitstatus).
 
 ---
 
@@ -109,7 +109,7 @@ So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
 | Kein Projektordner | Workshop-Dateien fehlen | Repository klonen oder ZIP von GitHub entpacken |
 | Kein USB-Port sichtbar | Treiber oder Kabel | Schritt 4, anderes USB-Kabel (Daten) |
 | `No device found on port` | Falscher Port oder Arduino Nano nicht verbunden | Port in PlatformIO manuell wählen |
-| Upload schlägt fehl | Falscher Port | Unten in der Leiste anderen COM-Port wählen |
+| Upload schlägt fehl | Falscher Port | Unten in der Leiste einen anderen COM-Port wählen |
 | Sehr langer erster Build | Normal | Internet anlassen, 2–5 Minuten warten |
 
 ---
@@ -120,4 +120,4 @@ So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
 - **Komponenten & Verkabelung:** [01 Komponenten](../01_komponenten/README.md) und [Projekt-README](../README.md)
 - **Beispiele:** Ordner `04_beispiele/`
 
-Wenn **Upload** und **Serial Monitor** funktionieren, ist dein Setup **fertig**.
+Wenn **Upload** und **Serial Monitor** funktionieren, ist das Setup **fertig**.

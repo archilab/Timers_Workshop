@@ -4,7 +4,7 @@
 
 ---
 
-Öffne das Custom GPT **Folkwang_Timers** in ChatGPT (Link oben). Wenn du ein **eigenes** GPT auf Basis dieses Workshops anlegst, nutze die Dateien aus [`Dataset_Timers/`](../Dataset_Timers/) als Wissen.
+Das Custom GPT **Folkwang_Timers** öffnet man in ChatGPT (Link oben). Wenn man ein **eigenes** GPT auf Basis dieses Workshops anlegt, nutzt man die Dateien aus [`Dataset_Timers/`](../Dataset_Timers/) als Wissen.
 
 ---
 

@@ -16,7 +16,7 @@ Das Terminal zeigt den Fortschritt. Ein erfolgreicher Upload endet oft mit **`SU
 1. Unten auf das **Stecker-Symbol** (Serial Monitor) klicken  
 2. **Baudrate:** `115200` (wie in der Workshop-`platformio.ini`)
 
-Typische Meldungen: Sensor gefunden / nicht gefunden, Debug-Ausgaben aus deinem Sketch.
+Typische Meldungen: Sensor gefunden / nicht gefunden, Debug-Ausgaben aus dem Sketch.
 
 ---
 
