@@ -8,7 +8,7 @@ Kurze **Beispielprompts** für **Folkwang_Timers** (Arduino Nano, DS3231, VL53L0
 
 > „Zeige die aktuelle Uhrzeit der DS3231 groß auf dem OLED. Nutze die Workshop-Pins und `lib_deps`."
 
-> „Der Abstand vom VL53L0X soll die weiße Kanal-Helligkeit der NeoPixels steuern — nah = hell."
+> „Der Abstand vom VL53L0X soll die Helligkeit des NeoPixel-Rings steuern — nah = alle LEDs heller (z. B. gleiches Grau R=G=B)."
 
 ---
 

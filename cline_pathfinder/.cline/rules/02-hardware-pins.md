@@ -25,14 +25,14 @@
 
 | Function        | Pin   | Notes |
 |-----------------|-------|--------|
-| NeoPixel data   | **6** | 6× RGBW strip, `NEO_GRBW + NEO_KHZ800` |
+| NeoPixel data   | **6** | 12× WS2812B RGB ring (5V), `NEO_GRB + NEO_KHZ800` |
 | Servo signal    | **9** | `Servo::attach(9)` |
 | On-board LED    | **13**| Optional heartbeat / debug |
 
-## NeoPixel strip
+## NeoPixel ring (WS2812B)
 
-- Count: **6** pixels.
-- Constructor: `Adafruit_NeoPixel strip(6, 6, NEO_GRBW + NEO_KHZ800);`
+- Count: **12** pixels (NeoPixel LED Ring 5V RGB WS2812B).
+- Constructor: `Adafruit_NeoPixel strip(12, 6, NEO_GRB + NEO_KHZ800);`
 
 ## Servo
 

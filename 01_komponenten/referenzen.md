@@ -15,7 +15,7 @@ Verwendet wird der **Arduino Nano** (ATmega328P) mit **PlatformIO** (`nanoatmega
 | **Adafruit SSD1306** + **GFX** | OLED 128×64 | [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) |
 | **Adafruit MPU6050** | IMU + Temperatur | [Adafruit MPU6050](https://github.com/adafruit/Adafruit_MPU6050) |
 | **Adafruit Unified Sensor** | `sensors_event_t` | [Adafruit_Sensor](https://github.com/adafruit/Adafruit_Sensor) |
-| **Adafruit NeoPixel** | WS2812B / SK6812 RGBW | [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel) |
+| **Adafruit NeoPixel** | WS2812B (Workshop: 12-LED-Ring RGB); Library deckt auch SK6812 RGBW ab | [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel) |
 
 **Servo** und **Wire** sind in der Arduino-Framework-Installation enthalten.
 

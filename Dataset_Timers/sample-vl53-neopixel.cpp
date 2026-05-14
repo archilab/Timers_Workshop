@@ -4,7 +4,9 @@
 #include <Adafruit_NeoPixel.h>
 
 VL53L0X sensor;
-Adafruit_NeoPixel strip(6, 6, NEO_GRBW + NEO_KHZ800);
+constexpr uint16_t kNeoPixelCount = 12;
+constexpr uint8_t kNeoPixelPin = 6;
+Adafruit_NeoPixel strip(kNeoPixelCount, kNeoPixelPin, NEO_GRB + NEO_KHZ800);
 
 void setup() {
   Serial.begin(115200);
@@ -23,8 +25,8 @@ void loop() {
   if (sensor.timeoutOccurred()) mm = 4000;
   float v = constrain(1.0f - (mm / 800.0f), 0.0f, 1.0f);
   uint8_t b = (uint8_t)(v * 255);
-  for (int i = 0; i < 6; i++) {
-    strip.setPixelColor(i, strip.Color(0, 0, 0, b));
+  for (uint16_t i = 0; i < kNeoPixelCount; i++) {
+    strip.setPixelColor(i, strip.Color(b, b, b));
   }
   strip.show();
   delay(50);

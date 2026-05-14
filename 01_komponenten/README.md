@@ -13,7 +13,7 @@ Der **Timers Workshop** nutzt mehrere Module auf einem **Arduino Nano**. Du muss
 | [VL53L0X](./vl53l0x.md) | Sensor | Distanz in mm (I²C) |
 | [SSD1306 OLED](./ssd1306.md) | Aktor/Anzeige | 128×64 Pixel (I²C) |
 | [MPU6050](./mpu6050.md) | Sensor | Bewegung, Neigung, Temperatur (I²C, **0x69**) |
-| [NeoPixel Strip](./neopixel.md) | Aktor | 6 RGBW-Pixel (Daten **D6**) |
+| [NeoPixel-Ring WS2812B](./neopixel.md) | Aktor | 12 RGB-Pixel, 5V-Ring (Daten **D6**) |
 | [Servo](./servo.md) | Aktor | Winkel 0–180° (Signal **D9**) |
 
 ---

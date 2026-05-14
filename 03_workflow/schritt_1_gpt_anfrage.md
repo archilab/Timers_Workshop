@@ -37,7 +37,7 @@ Ich möchte [EINGANG] mit [AUSGANG] verbinden.
 | Weniger gut | Besser |
 |---|---|
 | „Mach was mit dem Sensor" | „Wenn der Abstand unter 200 mm fällt, sollen die NeoPixels voll aufleuchten." |
-| „LED und Uhr" | „Das OLED zeigt die Uhrzeit; jede volle Minute blitzt der NeoPixel-Streifen kurz auf." |
+| „LED und Uhr" | „Das OLED zeigt die Uhrzeit; jede volle Minute blitzt der NeoPixel-Ring kurz auf." |
 | „Servo und MPU" | „Der Servo folgt der X-Neigung des MPU6050 zwischen 0° und 180°." |
 
 Die Anfrage muss nicht technisch sein — aber **Eingang**, **Ausgang** und **Zusammenhang** sollten klar sein.

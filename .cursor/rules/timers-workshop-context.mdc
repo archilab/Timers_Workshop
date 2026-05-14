@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Timers Workshop context
 
-This repository is the **Timers Workshop** (Folkwang Universität der Künste): **Arduino Nano**, **PlatformIO (Arduino)**, and fixed hardware — **DS3231 RTC**, **VL53L0X**, **SSD1306** 128×64 OLED, **MPU6050** (I²C **0x69**), **NeoPixel** (6× RGBW on **D6**), **servo** (**D9**). Stack is **local only** (no WiFi / PairLink). Custom GPT: **Folkwang_Timers**.
+This repository is the **Timers Workshop** (Folkwang Universität der Künste): **Arduino Nano**, **PlatformIO (Arduino)**, and fixed hardware — **DS3231 RTC**, **VL53L0X**, **SSD1306** 128×64 OLED, **MPU6050** (I²C **0x69**), **NeoPixel** (12× WS2812B RGB ring on **D6**, `NEO_GRB + NEO_KHZ800`), **servo** (**D9**). Stack is **local only** (no WiFi / PairLink). Custom GPT: **Folkwang_Timers**.
 
 ## Language
 

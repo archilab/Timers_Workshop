@@ -68,7 +68,7 @@ Im Workshop entstehen **zeit- und messwertbasierte** interaktive Systeme mit:
 - **Arduino Nano** Mikrocontrollern  
 - **DS3231** Echtzeituhr, **VL53L0X** Abstand, **SSD1306** OLED (128×64, I²C)  
 - **MPU6050** Bewegung / Lage / Temperatur  
-- **NeoPixel**-Streifen und **Servo**  
+- **NeoPixel**-Ring (12× WS2812B RGB, 5V) und **Servo**  
 - KI-generiertem Code  
 - dem Custom GPT **„Folkwang_Timers“**
 
@@ -186,7 +186,7 @@ Kein manuelles Programmieren. Kein Verständnis von Syntax notwendig.
 - **VL53L0X** Time-of-Flight (Distanz mm, I²C)  
 - **SSD1306** OLED 128×64 (I²C)  
 - **MPU6050** (Bewegung, Lage, On-Chip-Temperatur; im Workshop-Adressschema **0x69**)  
-- **NeoPixel** RGBW LED-Streifen (6 Pixel, Datenpin **D6**)  
+- **NeoPixel** LED-Ring 5V RGB WS2812B (**12** Pixel, Datenpin **D6**, `NEO_GRB + NEO_KHZ800`)  
 - **Servomotor** (0–180°, Signal **D9**)
 
 Hinweis: **MPU6050 AD0** mit **VCC** verbinden, damit der Sensor **0x69** nutzt und der **DS3231** **0x68** frei bleibt.

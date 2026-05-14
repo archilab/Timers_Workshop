@@ -10,7 +10,7 @@ Diese Dateien liefern **offlinefähigen API-Kontext** für alle in `template-pla
 | [context-library-vl53l0x-pololu.md](./context-library-vl53l0x-pololu.md) | `pololu/VL53L0X` | Time-of-Flight Distanz mm (I²C **0x29**) |
 | [context-library-ssd1306.md](./context-library-ssd1306.md) | `Adafruit SSD1306` + GFX | 128×64 OLED (I²C **0x3C** / **0x3D**) |
 | [context-library-adafruit-mpu6050.md](./context-library-adafruit-mpu6050.md) | `adafruit/Adafruit MPU6050` | IMU + Temperatur (I²C **0x69** im Workshop) |
-| [context-library-adafruit-neopixel.md](./context-library-adafruit-neopixel.md) | `adafruit/Adafruit NeoPixel` | 6× RGBW, Datenpin **D6** |
+| [context-library-adafruit-neopixel.md](./context-library-adafruit-neopixel.md) | `adafruit/Adafruit NeoPixel` | 12× WS2812B RGB, Datenpin **D6** |
 | [context-library-adafruit-unified-sensor.md](./context-library-adafruit-unified-sensor.md) | `adafruit/Adafruit Unified Sensor` | `sensors_event_t` für MPU6050 |
 
 **Workshop-Hardware (fest):** I²C **A4/A5**; NeoPixel **D6**; Servo **D9**; optional LED **D13**.

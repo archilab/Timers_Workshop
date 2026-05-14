@@ -36,7 +36,7 @@ VL53L0X @ 0x29
 SSD1306 @ 0x3C or 0x3D
 
 GPIO
-NeoPixel data D6 (6 pixels, NEO_GRBW + NEO_KHZ800)
+NeoPixel data D6 (12× WS2812B RGB, NEO_GRB + NEO_KHZ800)
 Servo signal D9
 Optional LED D13
 

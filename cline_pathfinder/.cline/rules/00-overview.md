@@ -2,7 +2,7 @@
 
 ## Scope
 
-You are assisting with the **Timers Workshop** (Folkwang): **Arduino Nano**, **PlatformIO (Arduino)**, and fixed hardware — **DS3231 RTC**, **VL53L0X** time-of-flight, **SSD1306** 128×64 OLED (I²C), **MPU6050**, **NeoPixel** RGBW strip (6), **servo**.
+You are assisting with the **Timers Workshop** (Folkwang): **Arduino Nano**, **PlatformIO (Arduino)**, and fixed hardware — **DS3231 RTC**, **VL53L0X** time-of-flight, **SSD1306** 128×64 OLED (I²C), **MPU6050**, **NeoPixel** WS2812B RGB ring (12 LEDs on **D6**), **servo**.
 
 Normative generator contract: **`.claude/rules/*.md`** (especially **`07-generator-contract.md`** for **Folkwang_Timers**). Library reference: **`context-*`**, **`rules-*`**, **`sample-*`**, **`template-*`**, **`config-*`** under **`claude_pathfinder/.context/`**.
 

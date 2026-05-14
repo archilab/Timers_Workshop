@@ -6,7 +6,7 @@ Der **Arduino Nano** (hier: klassischer **ATmega328P**, 5V) ist der Mikrocontrol
 
 - **USB:** Programmieren und Stromversorgung vom Laptop  
 - **A4 / A5:** I²C (**SDA** / **SCL**) für DS3231, VL53L0X, SSD1306, MPU6050  
-- **D6:** NeoPixel-Datenleitung (Workshop-Festlegung)  
+- **D6:** NeoPixel-Datenleitung (Workshop: **12× WS2812B**-Ring)  
 - **D9:** Servo-Signal (Workshop-Festlegung)  
 - **D13:** eingebaute LED (optional zum Testen)
 

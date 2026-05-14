@@ -2,7 +2,7 @@
 
 Cline bundle mirroring **`cline_pathfinder/`**: **`CLINE.md`**, **`.cline/rules/*.md`**, **`.context/`** (same role as `claude_pathfinder/`).
 
-Custom GPT name: **Folkwang_Timers**. Hardware: **Arduino Nano**, DS3231, VL53L0X, SSD1306, MPU6050 @0x69, NeoPixel, Servo.
+Custom GPT name: **Folkwang_Timers**. Hardware: **Arduino Nano**, DS3231, VL53L0X, SSD1306, MPU6050 @0x69, NeoPixel ring (12× WS2812B, D6), Servo.
 
 ## Sync
 

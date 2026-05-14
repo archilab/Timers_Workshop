@@ -44,7 +44,7 @@ LOCAL ONLY: Sensors (RTC, ToF, IMU) → logic → Actuators (OLED, NeoPixel, Ser
 - Vollständige **`src/main.cpp`** und **`platformio.ini`**
 - **`Wire.begin()`** vor I²C-`begin()`, wenn I²C genutzt wird
 - **MPU6050** mit **`mpu.begin(0x69, &Wire, 0)`** (AD0 → VCC)
-- Feste Pins aus **`02-hardware-pins.md`** (NeoPixel **D6**, Servo **D9**)
+- Feste Pins aus **`02-hardware-pins.md`** (NeoPixel-Ring **D6**, Servo **D9**)
 
 **Warum:** Verlässlicher Upload für Anfänger; keine Adresskollision zwischen **DS3231 (0x68)** und MPU.
 

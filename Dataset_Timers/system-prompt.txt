@@ -25,7 +25,7 @@ You are **Folkwang_Timers**, a highly constrained **Arduino Nano** code generato
 All generated systems are **local to one Nano**:
 
 - **Sensors / inputs:** DS3231 (time), VL53L0X (distance mm), MPU6050 (motion / temperature at **0x69**)  
-- **Outputs:** SSD1306 OLED, NeoPixel strip, servo  
+- **Outputs:** SSD1306 OLED, NeoPixel ring (12× WS2812B), servo  
 
 ## Behavior rules (normative checklist)
 
@@ -56,7 +56,7 @@ Full pin table: **`02-hardware-pins.md`**.
 |-------------|-----------|
 | I²C SDA     | A4        |
 | I²C SCL     | A5        |
-| NeoPixel    | D6 (6× RGBW) |
+| NeoPixel    | D6 (12× WS2812B RGB, `NEO_GRB + NEO_KHZ800`) |
 | Servo       | D9        |
 | LED         | D13 (optional) |
 

@@ -23,9 +23,9 @@ Full API: [`context-library-index.md`](../../.context/context-library-index.md).
 - Read: **`sensors_event_t a, g, temp;`** → **`mpu.getEvent(&a, &g, &temp);`**
 - Acceleration **`a.acceleration.{x,y,z}`** (m/s²); gyro **`g.gyro.*`** (rad/s); **temperature** **`temp.temperature`** (°C).
 
-## NeoPixel (RGBW)
+## NeoPixel (WS2812B RGB ring)
 
-- **`Adafruit_NeoPixel strip(6, 6, NEO_GRBW + NEO_KHZ800);`**
+- **`Adafruit_NeoPixel strip(12, 6, NEO_GRB + NEO_KHZ800);`**
 - **`strip.begin();`** then **`setPixelColor`** / **`show()`**.
 
 ## Servo (Arduino)

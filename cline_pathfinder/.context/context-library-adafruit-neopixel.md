@@ -9,7 +9,8 @@ Quelle: [Adafruit_NeoPixel.h](https://github.com/adafruit/Adafruit_NeoPixel/blob
 
 ## Workshop-Festlegung (Referenz)
 
-- 6 Pixel, **Pin D6** (digital 6), **RGBW**, `NEO_GRBW + NEO_KHZ800`
+- **NeoPixel LED Ring 5V RGB WS2812B**, **12** Pixel, **Pin D6** (digital 6), **`NEO_GRB + NEO_KHZ800`**
+- Kein RGBW-/Weißkanal: Helligkeit über gleiche Werte **R=G=B** oder `setBrightness()`.
 
 ---
 
@@ -26,7 +27,7 @@ Adafruit_NeoPixel(void);  // spät konfigurierbar
 - **RGBW (4 Byte/Pixel):** `NEO_WRGB`, `NEO_WRBG`, …, `NEO_RGBW`, …, **`NEO_GRBW`**, … (alle Permutationen im Header)
 - **Takt:** `NEO_KHZ800` (typisch), `NEO_KHZ400` (ältere v1-Pixel)
 
-Kombination: z. B. `NEO_GRBW + NEO_KHZ800`.
+**Workshop (WS2812B):** `NEO_GRB + NEO_KHZ800`. **Andere Hardware (SK6812 RGBW):** z. B. `NEO_GRBW + NEO_KHZ800`.
 
 ---
 
