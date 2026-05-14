@@ -1,81 +1,42 @@
-# Example scripts — Custom GPT integration (read-first)
+# Example scripts — Custom GPT integration (Timers Workshop)
 
-**Pfad (Pathfinder Cline-Bundle):** Diese Datei liegt in **`cline_pathfinder/.context/`**. Das frühere monolithische **`system-prompt.txt`** ist in **`../.cline/rules/07-generator-contract.md`** (plus **`00`–`06`**) aufgeteilt. Die übrigen hier genannten Dateinamen liegen in **`.context/`**, sofern nicht anders angegeben.
+**Pfad:** `claude_pathfinder/.context/`. Normative contract: **`../.claude/rules/07-generator-contract.md`** (**Folkwang_Timers**) plus **`00`–`06`**.
 
-Die folgenden Dateien sind **Referenzbeispiele** (Muster für Struktur, PairLink-Nutzung und Sensordaten). Sie sind **keine** normativen Spezifikationen: Verhalten, Pins und API-Details sind in **`.cline/rules/*.md`** (v. a. **`07-generator-contract.md`**), **`context-pairlink.md`**, **`rules-meta-layer.md`**, **`rules-validation.md`** und den **`context-library-*.md`** verbindlich, wenn es Abweichungen gibt.
+Die **`sample-*.cpp`** sind **Muster**; Regeln und **`context-library-*.md`** haben Vorrang.
 
----
+## Priorität
 
-## Priorität im Wissens-Stack (höher = zuerst anwenden)
+1. **`.claude/rules/*.md`**
+2. **`rules-meta-layer.md`** + **`rules-validation.md`**
+3. **`context-library-index.md`** → **`context-library-*.md`**
+4. **`03-i2c-time-display.md`**
+5. **`sample-*.cpp`** + **`template-platformio.ini`**
+6. **`config-routing.json`** (Alias → Sensor)
 
-1. **`.cline/rules/*.md`** — Rollen, Pflicht-Includes, `lib_deps`, feste Pins, Ausgabeformat (Kern: **`07-generator-contract.md`**)  
-2. **`context-pairlink.md`** — PairLink-API, Kanäle, `pairLink.update()`, Konfiguration  
-3. **`rules-meta-layer.md`** + **`rules-validation.md`** — Workshop-Regeln (Default-Sensor, verbotene Muster, Checks)  
-4. **`context-library-index.md`** → **`context-library-*.md`** — vollständige Bibliotheks-APIs  
-5. **Beispiel-Skripte** (`sample-*.cpp`) + **`template-platformio.ini`** — illustrieren typische Kombinationen; bei Konflikten **nicht** gegen 1–4 verletzen  
-6. **`config-routing.json`** — optionale Sensor-Alias-Logik für Routing/Defaults (kein Ersatz für das Regelwerk)
+## Datei-Katalog
 
----
+| Datei | Inhalt |
+|--------|--------|
+| **`sample-rtc-oled.cpp`** | DS3231 + SSD1306 Uhrzeit |
+| **`sample-vl53-neopixel.cpp`** | VL53L0X → NeoPixel-Helligkeit |
+| **`sample-time-window-actuator.cpp`** | RTC-Fenster + Distanz → Servo |
+| **`sample-mpu6050-servo.cpp`** | MPU6050 @0x69 → Servo D9 |
+| **`sample-neopixel-actor.cpp`** | NeoPixel D6 Demo |
 
-## Datei-Katalog (was wofür dient)
+## Konventionen
 
-| Datei | Inhalt | Passende Library-Contexts |
-|-------|--------|---------------------------|
-| **`sample-gesture-apds9960.cpp`** | APDS9960 + PairLink: Geste → `sensor.value`, lokaler Fallback | `context-library-adafruit-apds9960.md` |
-| **`sample-mpu6050-servo.cpp`** | MPU6050 + Servo + PairLink: Beschleunigung normalisiert → `sensor.value` | `context-library-adafruit-mpu6050.md`, `context-library-esp32servo.md`, `context-library-adafruit-unified-sensor.md` |
-| **`sample-neopixel-actor.cpp`** | NeoPixel-Aktor + PairLink (hier Demo-Eingang `random`) | `context-library-adafruit-neopixel.md` |
-| **`sample-swarm-node.cpp`** | APDS9960 + Servo, Netzwerkwert und lokaler Sensor kombiniert | APDS9960 + ESP32Servo + `context-pairlink.md` |
-| **`sample-smooth-node.cpp`** | APDS9960 + gleitender Wert über empfangene `sensor.value` | APDS9960 + `context-pairlink.md` |
-| **`template-platformio.ini`** | **Template** für `lib_deps` und `env` (Workshop-Set) | Spiegel mit **`.cline/rules/`** / Index; generierte Projekte nutzen **`src/main.cpp`**, nicht diese Dateinamen |
-| **`rules-meta-layer.md`** | Kurzregeln (Default-Sensor, Kanal, keine `analogRead` …) | Vor Skript-„Kreativität“ anwenden |
-| **`config-routing.json`** | Alias → Sensor-Typ (`gesture`→`apds9960`, `motion`→`mpu6050`, …) | Nur semantische Zuordnung; Hardware bleibt aus dem Regelwerk |
+- Ausgabe im generierten Projekt: **`src/main.cpp`** + **`platformio.ini`**
+- **I²C:** `Wire.begin()` (Nano **A4/A5**)
 
----
+## Upload-Reihenfolge (Knowledge „Folkwang_Timers“)
 
-## Konventionen für das GPT
+1. `../.claude/rules/07-generator-contract.md` + `00`–`06` + `03-i2c-time-display.md`
+2. `rules-meta-layer.md`, `rules-validation.md`
+3. `context-library-index.md` + alle `context-library-*.md`
+4. `context-example-scripts.md`
+5. `config-routing.json`
+6. `template-platformio.ini` + `sample-*.cpp`
 
-- **Ausgabe-Dateiname:** Immer **`main.cpp`** (und `platformio.ini`) im generierten Projekt — die Dataset-Samples heißen `sample-*.cpp` nur als **Referenz**.  
-- **Beispiele als Muster:** Struktur übernehmen (`setup`/`loop`, `pairLink.begin`, Kanäle, `isPaired`-Zweig), aber **Pins, Normalisierung und Sensor-Setup** an Aufgabe und `context-library-*` anpassen.  
-- **I²C:** Wenn ein Sample `Wire.begin(21,22)` weglässt, trotzdem gemäß Workshop **`Wire.begin(21, 22)`** in echten Sketches setzen, sofern I²C-Sensoren genutzt werden.  
-- **`rules-validation.md`:** z. B. `analogRead` verboten (außer explizit angefordert) — auch wenn ein älteres Beispiel `analogWrite` o. Ä. zeigt: **Validierungsregeln** und **`.cline/rules/`** haben Vorrang für neue Generierung.
+## `config-routing`
 
----
-
-## Empfohlene Upload-Reihenfolge (Custom GPT „Knowledge“)
-
-1. **`../.cline/rules/07-generator-contract.md`** + bei Bedarf **`00`–`06`** aus **`../.cline/rules/`** (oder für das ZIP-Dataset weiterhin **`GPT_Dataset_Pathfinder/system-prompt.txt`**, falls ihr das klassische Ein-File-Prompt nutzt)  
-2. `rules-meta-layer.md`, `rules-validation.md`  
-3. `context-pairlink.md`  
-4. `context-library-index.md` + alle `context-library-*.md`  
-5. `context-example-scripts.md` (**diese Datei**)  
-6. `config-routing.json`  
-7. `template-platformio.ini`  
-8. `sample-gesture-apds9960.cpp`, `sample-mpu6050-servo.cpp`, `sample-neopixel-actor.cpp`, `sample-swarm-node.cpp`, `sample-smooth-node.cpp`  
-
-So weiß das Modell, dass Punkt 5–8 **Beispiele/Templates** sind und Punkt 1–4 die **Regeln** sind.
-
----
-
-## Kurzreferenz `config-routing.json`
-
-```json
-{
-  "sensor_map": {
-    "gesture": "apds9960",
-    "motion": "mpu6050",
-    "distance": "apds9960",
-    "light": "apds9960",
-    "lux": "apds9960",
-    "color": "apds9960",
-    "als": "apds9960",
-    "temperature": "mpu6050",
-    "temp": "mpu6050"
-  },
-  "fallback": { "sensor": "gesture" }
-}
-```
-
-- **`distance`** → selber Chip wie Nähe am APDS9960 (semantisch, nicht separates Bauteil).  
-- **`light` / `lux` / `color` / `als`** → APDS9960 ALS (`enableColor`, `getColorData`, ggf. `calculateLux` / `calculateColorTemperature`).  
-- **`temperature` / `temp`** → MPU6050 On-Chip-Temperatur (`getEvent` drittes Event).  
-- **`fallback.sensor: gesture`** → Default-Pfad entspricht **`rules-meta-layer.md`** (APDS9960 / Geste).
+Siehe **`config-routing.json`** (Spiegel: [`config-routing.md`](./config-routing.md)).

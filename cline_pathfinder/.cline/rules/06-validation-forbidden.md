@@ -1,28 +1,22 @@
----
-description: Validation checklist and forbidden patterns
-alwaysApply: true
----
-
 # Validation and forbidden patterns
 
-## Required in every PairLink sketch
+## Required in every sketch (when components are used)
 
-- `pairLink.update()` in `loop()`.
-- `pairLink.isPaired()` when logic depends on pairing (typical pattern).
-- `"sensor.value"` publish and subscribe registered if the sketch uses that channel.
-- `platformio.ini` includes **all** required `lib_deps` (see `04-platformio-dependencies.md`).
+- **`Wire.begin()`** before any I²C **`begin()`** if the sketch uses I²C devices.
+- **MPU6050** at workshop address **0x69** (see **`02-hardware-pins.md`**).
+- **`platformio.ini`** lists **all** required **`lib_deps`** (see **`04-platformio-dependencies.md`**).
 
-## Forbidden (unless user explicitly asks)
+## Forbidden (unless the user explicitly asks)
 
-- **`analogRead`** — workshop meta rule.
-- **`actor.value`** — invalid channel naming for this workshop.
-- Extra **libraries** not in the strict list.
-- **Blocking** long `delay()` in the main loop when it breaks PairLink timing or gesture sampling — prefer non-blocking patterns.
+- **`analogRead`** — workshop default.
+- **ESP32-only** APIs or libraries (**`ESP32Servo`**, PairLink, WebSockets, WiFi stack).
+- **Extra libraries** outside the strict **`lib_deps`** list.
+- **Long blocking `delay()`** in **`loop()`** when it breaks sensor polling or display refresh — prefer **`millis()`**-based timing.
 
 ## Routing semantics (optional)
 
-Sensor aliases for intent: see [`config-routing.json`](../../.context/config-routing.json) (`gesture` → APDS9960, `motion` → MPU6050, `distance` → APDS9960 proximity, `light`/`lux`/`color`/`als` → APDS9960 ALS, `temperature`/`temp` → MPU6050; default fallback `gesture`).
+Sensor / intent aliases: see [`config-routing.json`](../.context/config-routing.json) (human-readable mirror: [`config-routing.md`](../.context/config-routing.md)).
 
 ## Sample code priority
 
-Bundled `sample-*.cpp` files in **`cline_pathfinder/.context/`** are **examples**. If they ever conflict with **`.cline/rules/*.md`** (including **`07-generator-contract.md`**), **follow the rules**, not the sample.
+Bundled **`sample-*.cpp`** files in **`claude_pathfinder/.context/`** are **examples**. If they conflict with **`.claude/rules/*.md`** (including **`07-generator-contract.md`**), **follow the rules**, not the sample.

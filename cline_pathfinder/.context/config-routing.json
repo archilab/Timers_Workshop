@@ -1,16 +1,19 @@
 {
   "sensor_map": {
-    "gesture": "apds9960",
+    "time": "ds3231",
+    "clock": "ds3231",
+    "rtc": "ds3231",
+    "distance": "vl53l0x",
+    "range": "vl53l0x",
+    "tof": "vl53l0x",
     "motion": "mpu6050",
-    "distance": "apds9960",
-    "light": "apds9960",
-    "lux": "apds9960",
-    "color": "apds9960",
-    "als": "apds9960",
+    "tilt": "mpu6050",
+    "display": "ssd1306",
+    "oled": "ssd1306",
     "temperature": "mpu6050",
     "temp": "mpu6050"
   },
   "fallback": {
-    "sensor": "gesture"
+    "sensor": "time"
   }
 }

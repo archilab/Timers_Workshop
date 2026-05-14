@@ -79,6 +79,6 @@ Gemeinsamer Kopf:
 
 ---
 
-## 6. APDS9960
+## 6. Timers Workshop
 
-Nutzt im Workshop die **direkte** `Adafruit_APDS9960`-API — **nicht** den Unified-Sensor-Pfad: Gesten/Proximity (`readGesture`, `readProximity`) und bei Bedarf **Licht/Farbe** (`enableColor`, `getColorData`, `calculateLux`, `calculateColorTemperature`).
+Unified Sensor wird im **Timers Workshop** primär mit dem **MPU6050** (`getEvent` → Accel, Gyro, Temperatur) genutzt. RTC, ToF und OLED nutzen **eigene** Bibliotheks-APIs — siehe die jeweiligen `context-library-*.md`.

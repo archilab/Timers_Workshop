@@ -1,0 +1,25 @@
+# config-routing (JSON mirror for upload)
+
+When creating **`config-routing.json`** on disk, use this object:
+
+```json
+{
+  "sensor_map": {
+    "time": "ds3231",
+    "clock": "ds3231",
+    "rtc": "ds3231",
+    "distance": "vl53l0x",
+    "range": "vl53l0x",
+    "tof": "vl53l0x",
+    "motion": "mpu6050",
+    "tilt": "mpu6050",
+    "display": "ssd1306",
+    "oled": "ssd1306",
+    "temperature": "mpu6050",
+    "temp": "mpu6050"
+  },
+  "fallback": {
+    "sensor": "time"
+  }
+}
+```

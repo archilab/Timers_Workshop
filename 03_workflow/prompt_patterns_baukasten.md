@@ -1,4 +1,4 @@
-# Pathfinder Workshop – Prompt Patterns / Baukasten
+# Timers Workshop – Prompt Patterns / Baukasten
 
 **Kontext:** Systematische Muster zum Entwerfen eigener Prompts. Ergänzt [Schritt 1 · GPT-Anfrage formulieren](./schritt_1_gpt_anfrage.md) und die fertigen Formulierungen in [Beispielprompts](./pathfinder_prompts.md).
 

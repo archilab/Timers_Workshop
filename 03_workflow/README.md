@@ -13,7 +13,7 @@ Der gesamte Prozess — von der Idee bis zur laufenden Installation — besteht 
 │                              ↓                      │
 │   2.  Code einfügen     →  PlatformIO              │
 │                              ↓                      │
-│   3.  Upload starten    →  ESP32                   │
+│   3.  Upload starten    →  Arduino Nano            │
 │                                                     │
 └─────────────────────────────────────────────────────┘
 ```

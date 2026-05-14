@@ -20,7 +20,7 @@ Der NeoPixel-Strip besteht aus 6 einzeln ansteuerbaren LEDs. Jede LED kann jede 
 
 ## Anschluss
 
-- Datenleitung → GPIO 14
+- Datenleitung → **D6** (digital Pin 6)
 - Typ: GRBW + KHZ800
 
 Bibliothek: `Adafruit NeoPixel`

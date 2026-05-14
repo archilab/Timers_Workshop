@@ -2,7 +2,8 @@
 
 **PlatformIO:** `adafruit/Adafruit MPU6050`  
 **Includes:** `#include <Adafruit_MPU6050.h>` · `#include <Adafruit_Sensor.h>` · `#include <Wire.h>`  
-**Standard-I²C:** `MPU6050_I2CADDR_DEFAULT` = `0x68` (AD0 low)  
+**Timers Workshop:** MPU6050 wird an **I²C-Adresse `0x69`** betrieben (**AD0 → VCC**), damit der **DS3231** `0x68` nutzen kann.  
+**Standard-Upstream:** `MPU6050_I2CADDR_DEFAULT` = `0x68` (AD0 low) · **`bool begin(uint8_t i2c_addr, TwoWire *wire, ...)`** mit **`0x69`** verwenden.  
 **WHO_AM_I:** `MPU6050_DEVICE_ID` = `0x68`
 
 Quelle: Upstream [Adafruit_MPU6050.h](https://github.com/adafruit/Adafruit_MPU6050/blob/master/Adafruit_MPU6050.h), [Doxygen](https://adafruit.github.io/Adafruit_MPU6050/html/class_adafruit___m_p_u6050.html)

@@ -35,7 +35,7 @@ Am einfachsten: einen der fertigen Code-Ordner aus `04_beispiele/` kopieren und 
 
 1. In VSCode das PlatformIO-Symbol (Ameisenkopf) anklicken
 2. **New Project** → Name eingeben
-3. Board: `Espressif ESP32 Dev Module` (suche nach `esp32dev`)
+3. Board: **Arduino Nano ATmega328** (suche nach `nanoatmega328` oder `Arduino Nano`)
 4. Framework: `Arduino`
 5. Location: beliebiger Ordner → **Finish**
 6. Die vom GPT generierten Dateien ersetzen `src/main.cpp` und `platformio.ini`
@@ -49,7 +49,7 @@ PlatformIO liest die `platformio.ini` und lädt beim ersten Build automatisch al
 Man sieht das im Terminal-Bereich:
 ```
 Installing dependencies...
-Library installed: PairLink
+Library installed: RTClib
 Library installed: Adafruit NeoPixel
 ...
 ```

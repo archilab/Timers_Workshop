@@ -1,0 +1,17 @@
+---
+description: PlatformIO env and lib_deps for Timers Workshop (Nano)
+globs: "**/platformio.ini"
+alwaysApply: false
+---
+
+# platformio.ini (Nano)
+
+Use `nanoatmega328` / `atmelavr`. Strict `lib_deps`:
+
+- adafruit/RTClib
+- pololu/VL53L0X
+- adafruit/Adafruit SSD1306 + Adafruit GFX Library
+- adafruit/Adafruit MPU6050 + Unified Sensor
+- adafruit/Adafruit NeoPixel
+
+Copy from [claude_pathfinder/.context/template-platformio.ini](claude_pathfinder/.context/template-platformio.ini).

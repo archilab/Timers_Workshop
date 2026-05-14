@@ -9,7 +9,7 @@ Quelle: [Adafruit_NeoPixel.h](https://github.com/adafruit/Adafruit_NeoPixel/blob
 
 ## Workshop-Festlegung (Referenz)
 
-- 6 Pixel, GPIO 14, **RGBW**, `NEO_GRBW + NEO_KHZ800`
+- 6 Pixel, **Pin D6** (digital 6), **RGBW**, `NEO_GRBW + NEO_KHZ800`
 
 ---
 

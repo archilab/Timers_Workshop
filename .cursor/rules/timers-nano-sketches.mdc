@@ -1,0 +1,26 @@
+---
+description: Arduino Nano sketch conventions for Timers Workshop
+globs: "**/src/**/*.cpp,**/*.ino"
+alwaysApply: false
+---
+
+# Nano sketches (Timers Workshop)
+
+Deliver **complete** `setup()` / `loop()` and `platformio.ini` when generating a project.
+
+## Always
+
+- `Wire.begin()` before I²C device `begin()` when using I²C.
+- MPU6050 at **0x69** (`mpu.begin(0x69, &Wire, 0)`); DS3231 uses **0x68**.
+- `Serial.begin(115200)` when helpful.
+- Pins: NeoPixel **D6**, Servo **D9**, I²C **A4/A5** (see `02-hardware-pins.md`).
+
+## Never
+
+- PairLink, WiFi, WebSocket, `ESP32Servo`, or ESP32-only APIs.
+- Libraries outside strict `lib_deps`.
+- `analogRead` unless the user explicitly asks.
+
+## VL53L0X / OLED
+
+- Non-blocking `loop()`; limit OLED refresh rate if polling ToF quickly.

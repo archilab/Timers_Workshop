@@ -1,25 +1,27 @@
 # 04 · Beispiele
 
-Drei vollständige Durchläufe des Workshop-Workflows — von der GPT-Anfrage bis zum laufenden Code auf dem Controller. Jedes Beispiel dokumentiert den Prozess, nicht den Code.
+Drei vollständige Durchläufe des **Timers Workshop** — von der Anfrage an **Folkwang_Timers** bis zum laufenden Code auf dem **Arduino Nano**. Jedes Beispiel dokumentiert den Prozess; der Code liegt unter `code/` als PlatformIO-Projekt.
+
+> **Hinweis:** `platformio.ini` und `src/main.cpp` müssen auf **Nano + neue `lib_deps`** angepasst werden, falls noch nicht erledigt — siehe [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](../NON_MARKDOWN_MIGRATION_CHECKLIST.md).
 
 ---
 
 ## Die drei Beispiele
 
-| Beispiel | Sensor | Aktor | Modus |
-|---|---|---|---|
-| [01 · Geste steuert Licht](./beispiel_01_geste_licht/README.md) | APDS9960 (Geste) | NeoPixel Strip | Lokal |
-| [02 · Bewegung steuert Servo](./beispiel_02_bewegung_servo/README.md) | MPU6050 (Neigung) | Servo | Lokal |
-| [03 · Swarm-Installation](./beispiel_03_swarm_installation/README.md) | APDS9960 (Geste) | Servo auf zweitem Board | PairLink (Netzwerk) |
+| Beispiel | Inhalt | Fokus |
+|---|---|---|
+| [01 · Zeit auf dem OLED](./beispiel_01_geste_licht/README.md) | RTC + Anzeige (+ optional NeoPixel) | DS3231, SSD1306 |
+| [02 · Bewegung steuert Servo](./beispiel_02_bewegung_servo/README.md) | MPU6050 → Servo | Neigung / Beschleunigung |
+| [03 · Zeit und Nähe](./beispiel_03_swarm_installation/README.md) | RTC + VL53L0X + Aktor | **Lokal**, kein PairLink |
+
+*(Ordnername `beispiel_01_geste_licht` ist historisch; Inhalt wird auf RTC/OLED umgestellt.)*
 
 ---
 
-## Wie die Beispiele aufgebaut sind
+## Aufbau jedes Beispiels
 
-Jedes Beispiel enthält:
+- `README.md` — Idee, Prompt, Ergebnis  
+- `prompt.md` — Text an das GPT  
+- `code/` — PlatformIO-Projekt (`platformio.ini`, `src/main.cpp`)
 
-- `README.md` — Idee, Prompt, Ergebnis, Beobachtungen
-- `prompt.md` — der exakte Text, der an den GPT geschickt wurde
-- `code/` — der vollständige, unveränderte GPT-Output als lauffähiges PlatformIO-Projekt
-
-Die `code/`-Ordner können direkt in VSCode geöffnet und auf den ESP32 übertragen werden.
+Die `code/`-Ordner in VS Code öffnen, **`pio run`**, Upload auf den **Nano**.

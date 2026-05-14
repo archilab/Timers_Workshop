@@ -1,32 +1,39 @@
----
-description: Fixed GPIO and board for Pathfinder workshop
-alwaysApply: true
----
-
-# Hardware and pins
+# Hardware and pins (Arduino Nano)
 
 ## Board
 
-- **Board:** ESP32-PICO-KIT (Espressif), chip **ESP32-PICO-D4**
-- **PlatformIO:** `board = esp32dev` (or equivalent `pico32` / esp32dev in docs)
-- **Monitor:** `monitor_speed = 115200`
+- **Board:** Arduino Nano (ATmega328P, classic 5V)
+- **PlatformIO:** `board = nanoatmega328` under `platform = atmelavr`
+- **Serial monitor:** `monitor_speed = 115200`
 
-## Fixed connections (do not invent other pins)
+## I²C bus (shared)
 
-| Function | GPIO | Notes |
-|----------|------|--------|
-| Pairing / BOOT button | **0** | `config.pairButtonPin = 0` |
-| On-board status LED | **2** | `config.statusLedPin = 2` |
-| Servo signal | **12** | `Servo::attach(12)` |
-| NeoPixel data | **14** | 6× RGBW, `NEO_GRBW + NEO_KHZ800` |
-| I²C SDA | **21** | APDS9960 + MPU6050 shared bus |
-| I²C SCL | **22** | |
+- **SDA:** **A4**
+- **SCL:** **A5**
+- Call **`Wire.begin()`** in `setup()` before any I²C device `begin()`.
 
-## I²C
+## I²C addresses (workshop convention)
 
-- Call `Wire.begin(21, 22)` in `setup()` before sensor `begin()` when using APDS9960 or MPU6050.
+| Device        | Address | Notes |
+|---------------|---------|--------|
+| **DS3231**    | **0x68** | RTC (RTClib `RTC_DS3231`) |
+| **MPU6050**   | **0x69** | **AD0 pin tied to VCC** so it does not clash with the DS3231 at 0x68 |
+| **VL53L0X**   | **0x29** | Time-of-flight (default) |
+| **SSD1306**   | **0x3C** | 128×64 OLED (use **0x3D** only if your module silkscreen says 0x3D) |
+
+## Fixed GPIO (do not invent other pins without user request)
+
+| Function        | Pin   | Notes |
+|-----------------|-------|--------|
+| NeoPixel data   | **6** | 6× RGBW strip, `NEO_GRBW + NEO_KHZ800` |
+| Servo signal    | **9** | `Servo::attach(9)` |
+| On-board LED    | **13**| Optional heartbeat / debug |
 
 ## NeoPixel strip
 
 - Count: **6** pixels.
-- Constructor pattern: `Adafruit_NeoPixel strip(6, 14, NEO_GRBW + NEO_KHZ800);`
+- Constructor: `Adafruit_NeoPixel strip(6, 6, NEO_GRBW + NEO_KHZ800);`
+
+## Servo
+
+- Use Arduino **`Servo`** library (built-in with Arduino framework), **not** ESP32-specific servo libraries.

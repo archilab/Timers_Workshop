@@ -1,30 +1,8 @@
-# Prompt · Beispiel 01
+Erzeuge ein vollständiges PlatformIO-Projekt für den **Timers Workshop** (Arduino Nano):
 
-## Der verwendete Prompt
+- Lese die Uhrzeit von einer **DS3231** (I²C).
+- Zeige Stunden, Minuten und Sekunden auf einem **SSD1306** 128×64 OLED (I²C, Adresse 0x3C) in lesbarer Größe.
+- Nutze `Wire.begin()` und die strikten `lib_deps` des Workshops.
+- Kein WiFi, kein PairLink.
 
-> Wenn ich die Hand über den Sensor halte, sollen alle sechs LEDs aufleuchten. Kein Netzwerk, alles auf einem Board.
-
----
-
-## Was der GPT daraus macht
-
-Aus dieser einzeiligen Beschreibung leitet der GPT ab:
-
-- Sensor: APDS9960 (Standard-Gestensensor, da kein anderer angegeben)
-- Aktor: NeoPixel Strip (6 Pixel, GPIO 14)
-- Modus: Lokal (kein PairLink-Pairing aktiv)
-- Verhalten: Geste erkannt → Wert 1.0 → LEDs voll an; keine Geste → Wert 0.0 → LEDs aus
-
-Alle technischen Details — Pins, Bibliotheken, Normalisierung — fügt der GPT eigenständig hinzu.
-
----
-
-## Variationen, die man ausprobieren kann
-
-| Prompt-Änderung | Erwartetes Ergebnis |
-|---|---|
-| „...die LEDs sollen langsam aufleuchten" | GPT fügt eine Überblendung hinzu |
-| „...die LEDs sollen blau leuchten" | GPT setzt die Farbe auf Blau |
-| „...nicht alle LEDs, nur die ersten drei" | GPT begrenzt die Pixelanzahl |
-
-Diese Variationen zeigen, wie man über natürliche Sprache das Verhalten anpasst — ohne den Code selbst anzufassen.
+Gib `src/main.cpp` und `platformio.ini` aus.

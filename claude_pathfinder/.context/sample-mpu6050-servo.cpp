@@ -1,45 +1,27 @@
 #include <Arduino.h>
-#include <PairLink.h>
 #include <Wire.h>
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
-#include <ESP32Servo.h>
+#include <Servo.h>
 
-PairLink pairLink;
 Adafruit_MPU6050 mpu;
 Servo servo;
 
-void onActorValue(float value){
-  servo.write(value*180.0f);
-}
-
-void setup(){
+void setup() {
   Serial.begin(115200);
-  servo.attach(12);
-  mpu.begin();
-
-  PLConfig config;
-  plConfigSetLocalOnly(config, "nextreality_net", "hololens", "ws://192.168.1.14:8080/ws");
-  config.pairButtonPin = 0;
-  config.statusLedPin = 2;
-
-  pairLink.begin(config);
-  pairLink.addPublishChannel("sensor.value");
-  pairLink.addSubscribeChannel("sensor.value");
-  pairLink.onChannel("sensor.value", onActorValue);
+  Wire.begin();
+  servo.attach(9);
+  if (!mpu.begin(0x69, &Wire, 0)) {
+    Serial.println(F("MPU6050 not found (AD0 -> VCC for 0x69)"));
+    while (1) delay(10);
+  }
+  mpu.setAccelerometerRange(MPU6050_RANGE_4_G);
 }
 
-void loop(){
-  pairLink.update();
-
-  sensors_event_t a,g,temp;
-  mpu.getEvent(&a,&g,&temp);
-
-  float v = (a.acceleration.x + 10.0f)/20.0f;
-
-  if(pairLink.isPaired()){
-    pairLink.publish("sensor.value", v);
-  } else {
-    onActorValue(v);
-  }
+void loop() {
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+  float v = constrain((a.acceleration.x + 10.0f) / 20.0f, 0.0f, 1.0f);
+  servo.write((int)(v * 180.0f));
+  delay(20);
 }

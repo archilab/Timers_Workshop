@@ -1,11 +1,12 @@
-# Validation
+# Validation — Timers Workshop
 
-Required:
-- pairLink.update()
-- pairLink.isPaired()
-- sensor.value publish + subscribe
-- `template-platformio.ini` (bzw. generiertes `platformio.ini`) mit allen erforderlichen `lib_deps`
+Required (when the sketch uses the relevant hardware):
+
+- `Wire.begin()` before I²C `begin()` calls
+- MPU6050 at **0x69** (see `02-hardware-pins.md`)
+- `platformio.ini` / `template-platformio.ini` includes **all** required `lib_deps`
 
 Forbidden:
-- analogRead
-- actor.value
+
+- `analogRead` (unless user explicitly requests)
+- PairLink / WiFi / WebSocket / ESP32-only servo libraries

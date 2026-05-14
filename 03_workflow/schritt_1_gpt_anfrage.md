@@ -1,21 +1,21 @@
 # Schritt 1 · GPT-Anfrage formulieren
 
-**→ [Custom GPT öffnen](https://chatgpt.com/g/g-69b6eda5e8888191b2000af26055b60b-folwang-pairlink-starter)**
+Öffne dein Custom GPT **Folkwang_Timers** in ChatGPT (nachdem du es mit dem Dataset aus [`GPT_Dataset_Pathfinder/`](../GPT_Dataset_Pathfinder/) angelegt hast).
 
 ---
 
 ## Was der GPT braucht
 
-Der GPT ist spezialisiert — er erzeugt ausschließlich Code für den ESP32 mit den Workshop-Komponenten. Um funktionierenden Code zu generieren, braucht er drei Informationen:
+Der GPT erzeugt Code für den **Arduino Nano** mit den Workshop-Komponenten. Sinnvolle Anfragen enthalten:
 
-**1. Was ist der Eingang?**
-Womit wird die Installation gesteuert — eine Geste, eine Bewegung, eine Neigung?
+**1. Was ist der Eingang?**  
+Zeit (RTC), Abstand (VL53L0X), Neigung/Bewegung (MPU6050), ggf. Kombination.
 
-**2. Was ist der Ausgang?**
-Was soll passieren — leuchten die LEDs, dreht sich der Servo?
+**2. Was ist der Ausgang?**  
+OLED-Text, NeoPixel, Servo.
 
-**3. Wie sollen sie zusammenhängen?**
-Direkt auf einem Board, oder über zwei getrennte Boards via WLAN (PairLink)?
+**3. Wie hängen sie zusammen?**  
+Schwellen, Zeitfenster, „je näher desto …“, „nur nach 18 Uhr …“.
 
 ---
 
@@ -23,8 +23,7 @@ Direkt auf einem Board, oder über zwei getrennte Boards via WLAN (PairLink)?
 
 ```
 Ich möchte [EINGANG] mit [AUSGANG] verbinden.
-[Optional: Das soll über zwei Boards via PairLink funktionieren.]
-[Optional: Zusätzliche Beschreibung des Verhaltens.]
+[Optional: Verhalten genauer beschreiben — z. B. Zeitfenster, Schwellen in mm.]
 ```
 
 ---
@@ -33,30 +32,21 @@ Ich möchte [EINGANG] mit [AUSGANG] verbinden.
 
 | Weniger gut | Besser |
 |---|---|
-| „Mach was mit dem Sensor" | „Wenn ich die Hand über den Sensor halte, sollen alle LEDs aufleuchten" |
-| „LED und Bewegung" | „Der Servo dreht sich je nach Neigung des Boards — stark geneigt = weit gedreht" |
-| „Zwei Boards verbinden" | „Gerät A misst Gesten, Gerät B reagiert mit dem Servo — über PairLink verbunden" |
+| „Mach was mit dem Sensor" | „Wenn der Abstand unter 200 mm fällt, sollen die NeoPixels voll aufleuchten." |
+| „LED und Uhr" | „Das OLED zeigt die Uhrzeit; jede volle Minute blitzt der NeoPixel-Streifen kurz auf." |
+| „Servo und MPU" | „Der Servo folgt der X-Neigung des MPU6050 zwischen 0° und 180°." |
 
-Die Anfrage muss nicht technisch sein. Der GPT übersetzt künstlerische Beschreibungen in Code.
+Die Anfrage muss nicht technisch sein — aber **Eingang**, **Ausgang** und **Zusammenhang** sollten klar sein.
 
 ---
 
 ## Weitere Prompt-Ideen
 
-- **[Beispielprompts](./pathfinder_prompts.md)** — stufenweise Beispiele (Einstieg bis Experiment) zum Kopieren und Variieren  
-- **[Prompt-Patterns / Baukasten](./prompt_patterns_baukasten.md)** — Muster und Bausteine (Input → Transformation → Output), um eigene Prompts systematisch zu formulieren  
+- **[Beispielprompts](./pathfinder_prompts.md)** — stufenweise Beispiele  
+- **[Prompt-Patterns / Baukasten](./prompt_patterns_baukasten.md)** — Bausteine für eigene Prompts  
 
 ---
 
-## Was der GPT ausgibt
+## Weiter
 
-Nach der Anfrage liefert der GPT immer zwei Dateien:
-
-- `main.cpp` — der eigentliche Code
-- `platformio.ini` — die Projektkonfiguration mit allen Bibliotheken
-
-Beide Dateien werden im nächsten Schritt verwendet.
-
----
-
-→ Weiter: [Schritt 2 · Code in PlatformIO einsetzen](./schritt_2_platformio.md)
+**→ [Schritt 2 · Code in PlatformIO einsetzen](./schritt_2_platformio.md)**

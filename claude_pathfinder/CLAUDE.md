@@ -1,35 +1,35 @@
-# Pathfinder / Folkwang — Claude Code
+# Timers Workshop / Folkwang — Claude Code
 
-You assist with the **Pathfinder** physical-computing workshop: **ESP32 (ESP32-PICO-KIT)**, **PlatformIO (Arduino)**, **PairLink** networking, and fixed hardware (APDS9960 gesture/proximity/ALS-color, MPU6050 motion/temperature, NeoPixel RGBW strip, servo).
+You assist with the **Timers Workshop**: **Arduino Nano**, **PlatformIO (Arduino)**, and fixed hardware — **DS3231 RTC**, **VL53L0X** time-of-flight, **SSD1306** 128×64 OLED (I²C), **MPU6050** (at **0x69**), **NeoPixel** RGBW strip (6), **servo**. The Custom GPT aligned with this bundle is named **Folkwang_Timers**.
 
 Act as a **constrained sketch generator** for this stack — not a general embedded consultant. Deliver **complete** `src/main.cpp` and root **`platformio.ini`** when asked for code.
 
-**Normative rules** live in **`.claude/rules/*.md`** (workshop contract and behavior, including **`07-generator-contract.md`** for FolkwangESP-GPT identity). **Reference material** — **`context-*`**, **`rules-*`**, **`sample-*`**, **`template-*`**, **`config-*`** — under **[`.context/`](.context/)** (no dependency on paths outside `claude_pathfinder/`).
+**Normative rules** live in **`.claude/rules/*.md`** (including **`07-generator-contract.md`** for **Folkwang_Timers**). **Reference material** — **`context-*`**, **`rules-*`**, **`sample-*`**, **`template-*`**, **`config-*`** — under **[`.context/`](.context/)** (paths stay inside `claude_pathfinder/`).
 
 ## Rule modules
 
-Detailed rules live in **`.claude/rules/`** (numbered `00`–`07`). They load at session start; follow them before improvising APIs.
+Detailed rules live in **`.claude/rules/`** (numbered `00`–`07`, with **`03-i2c-time-display.md`** for I²C / RTC / OLED / VL53L0X).
 
 ## Priority when sources conflict
 
 1. This directory’s **`CLAUDE.md`** + **`.claude/rules/*.md`**
-2. [`context-pairlink.md`](.context/context-pairlink.md) — PairLink details
-3. [`rules-meta-layer.md`](.context/rules-meta-layer.md) + [`rules-validation.md`](.context/rules-validation.md) — short workshop rules
-4. [`context-library-index.md`](.context/context-library-index.md) and the `context-library-*.md` files in **`.context/`** — full Adafruit / ESP32Servo / JSON / WebSockets API surface
-5. [`context-example-scripts.md`](.context/context-example-scripts.md) — how samples and templates relate to the stack; upload order
+2. [`rules-meta-layer.md`](.context/rules-meta-layer.md) + [`rules-validation.md`](.context/rules-validation.md)
+3. [`context-library-index.md`](.context/context-library-index.md) and `context-library-*.md`
+4. [`03-i2c-time-display.md`](.claude/rules/03-i2c-time-display.md)
+5. [`context-example-scripts.md`](.context/context-example-scripts.md)
 6. **`sample-*.cpp`** in **`.context/`** — **patterns only**, not law
 
 ## Project layout (generated)
 
-- Source: **`src/main.cpp`** (not the `sample-*.cpp` filenames in `.context/`).
-- Config: **`platformio.ini`** at project root with the **strict `lib_deps`** from workshop rules.
+- Source: **`src/main.cpp`**
+- Config: **`platformio.ini`** at project root with the **strict `lib_deps`**
 - Template: [`template-platformio.ini`](.context/template-platformio.ini).
 
 ## Commands (PlatformIO)
 
 - Build: `pio run` (from project root, next to `platformio.ini`).
-- Serial monitor: `pio device monitor` (115200 baud per workshop).
+- Serial monitor: `pio device monitor` (115200 baud).
 
 ## Language
 
-Workshop text may be German; **code comments** may be German or English. **Identifiers and channel names** stay exactly as specified (e.g. `"sensor.value"`).
+Workshop text may be German; **code comments** may be German or English.

@@ -1,4 +1,4 @@
-# Pathfinder Workshop  
+# Timers Workshop  
 Folkwang Universität der Künste  
 
 ## Worum es geht
@@ -8,8 +8,8 @@ Interaktive Systeme entstehen heute nicht mehr primär durch Programmieren, sond
 Dieser Workshop untersucht einen zentralen Paradigmenwechsel:  
 Large Language Models fungieren nicht länger nur als Werkzeuge, sondern als **aktive Co-Designer und Übersetzer zwischen Idee und technischer Umsetzung**. Sie transformieren Sprache direkt in funktionale Systeme – vom Sensor bis zur physischen Interaktion.
 
-Am Beispiel des ESP32 wird sichtbar, wie sich diese Entwicklung konkret materialisiert:  
-Teilnehmende beschreiben eine künstlerische oder performative Idee – und ein speziell konfiguriertes custom GPT-System generiert daraus lauffähigen Code, der unmittelbar auf Hardware übertragen werden kann.
+Am Beispiel des **Arduino Nano** mit **Echtzeituhr (DS3231)**, **Distanzsensor (VL53L0X)** und **OLED-Display** wird sichtbar, wie sich diese Entwicklung konkret materialisiert:  
+Teilnehmende beschreiben eine künstlerische oder performative Idee — und das Custom-GPT-System **„Folkwang_Timers“** generiert daraus lauffähigen Code, der auf die Workshop-Hardware übertragen werden kann.
 
 Der Fokus liegt dabei nicht auf klassischer Programmierlogik, sondern auf:
 
@@ -63,19 +63,20 @@ Zugleich verschiebt sich die Rolle der Gestaltenden: weg von der reinen Implemen
 
 ## Was passiert im Workshop
 
-Im Workshop entstehen kleine vernetzte interaktive Systeme mit:
+Im Workshop entstehen **zeit- und messwertbasierte** interaktive Systeme mit:
 
-- ESP32 Mikrocontrollern
-- Sensoren
-- Aktoren wie LEDs und Servos
-- KI-generiertem Code
-- einem speziell konfigurierten GPT-System
+- **Arduino Nano** Mikrocontrollern  
+- **DS3231** Echtzeituhr, **VL53L0X** Abstand, **SSD1306** OLED (128×64, I²C)  
+- **MPU6050** Bewegung / Lage / Temperatur  
+- **NeoPixel**-Streifen und **Servo**  
+- KI-generiertem Code  
+- dem Custom GPT **„Folkwang_Timers“**
 
 Beispielhafte Anwendungen:
 
-- Handbewegung steuert Licht und Farbe
-- Distanz erzeugt Rotation oder physische Reaktion
-- Gesten lösen audiovisuelle oder kinetische Ereignisse aus
+- Uhrzeit und Datum auf dem OLED; Abläufe nach Uhrzeit steuern  
+- Abstand steuert Licht, Bewegung oder Servo  
+- Neigung oder Temperatur kombinieren sich mit Zeit und Anzeige
 
 ---
 
@@ -89,10 +90,9 @@ Der Ablauf im Workshop ist einfach:
 
 1. Eine Idee oder Interaktion beschreiben  
 2. Mit dem GPT-System daraus Code erzeugen  
-3. Den Code auf den ESP32 übertragen  
-4. Testen, verändern, verbessern
-5. Vernetzen
-6. Verhalten, Ergebnis und Logik reflektieren 
+3. Den Code auf den **Arduino Nano** übertragen  
+4. Testen, verändern, verbessern  
+5. Verhalten, Ergebnis und Logik reflektieren 
 
 ---
 
@@ -142,13 +142,13 @@ Diese Fragen sind kein Nebenthema, sondern Teil der gestalterischen Praxis.
 
 ---
 
-## 🔗 Custom GPT
+## Custom GPT „Folkwang_Timers“
 
-Custom GPTs von Open AI liefern signifikant bessere Ergebnisse wenn man als Nutzer eingelogged ist!!
+Custom GPTs von OpenAI liefern bessere Ergebnisse, wenn du als Nutzer eingeloggt bist.
 
-**[→ FOLWANG-PairLink GPT direkt öffnen](https://chatgpt.com/g/g-69b6eda5e8888191b2000af26055b60b-folwang-pairlink-starter)**
+**ChatGPT:** Lege ein Custom GPT mit dem Namen **Folkwang_Timers** an und lade die Trainingsdateien aus [`GPT_Dataset_Pathfinder/`](./GPT_Dataset_Pathfinder/) bzw. dem aktualisierten Dataset-ZIP (siehe [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](./NON_MARKDOWN_MIGRATION_CHECKLIST.md)) als Wissen hoch.
 
-**[→ Custom GPT Dataset herunterladen](./GPT_Dataset_Pathfinder.zip)** — System Prompt + alle Trainingsdateien als ZIP
+**[→ Custom GPT Dataset (ZIP)](./GPT_Dataset_Pathfinder.zip)** — System Prompt + Trainingsdateien *(ZIP bei Änderungen neu packen; siehe [`NON_MARKDOWN_MIGRATION_CHECKLIST.md`](./NON_MARKDOWN_MIGRATION_CHECKLIST.md).)*
 
 ---
 
@@ -170,7 +170,7 @@ Kein manuelles Programmieren. Kein Verständnis von Syntax notwendig.
 |---|---|
 | [00 Setup](./00_setup/README.md) | Git, VS Code, PlatformIO, Treiber — die Installation notwendiger Komponenten Schritt für Schritt erklärt |
 | [01 Komponenten](./01_komponenten/README.md) | Alle elektronischen Bauteile im Detail erklärt |
-| [02 PairLink](./02_pairlink/README.md) | Die Bibliothek für den Datenaustausch zwischen ESP32 Microcontrollern |
+| [02 Zeit und I²C-Bus](./02_pairlink/README.md) | Echtzeit, I²C-Bus, Adressen — **kein** WLAN/PairLink mehr |
 | [03 Workflow](./03_workflow/README.md) | Der Workflow im Detail · [Beispielprompts](./03_workflow/pathfinder_prompts.md) · [Prompt-Baukasten](./03_workflow/prompt_patterns_baukasten.md) |
 | [04 Beispiele](./04_beispiele/README.md) | Drei vollständige Beispiele mit Workflow-Durchläufen |
 | [05 Custom GPT](./05_custom_gpt/README.md) | Wie das Custom GPT funktioniert — und wie man sein eigenes bauen/anpassen kann |
@@ -179,11 +179,15 @@ Kein manuelles Programmieren. Kein Verständnis von Syntax notwendig.
 
 ## Im Workshop verwendete Hardware
 
-- ESP32-PICO-KIT (Espressif Entwicklungsboard · ESP32-PICO-D4 · WLAN + BT eingebaut)
-- APDS9960 (Gesten, Nähe, Umgebungslicht und Farbe)
-- MPU6050 (Bewegung, Lage, On-Chip-Temperatur)
-- NeoPixel RGBW LED-Streifen (6 Pixel)
-- Servomotor (0-180 Grad Rotation)
+- **Arduino Nano** (ATmega328P, klassisch 5V)  
+- **DS3231** Modul (Echtzeituhr, I²C)  
+- **VL53L0X** Time-of-Flight (Distanz mm, I²C)  
+- **SSD1306** OLED 128×64 (I²C)  
+- **MPU6050** (Bewegung, Lage, On-Chip-Temperatur; im Workshop-Adressschema **0x69**)  
+- **NeoPixel** RGBW LED-Streifen (6 Pixel, Datenpin **D6**)  
+- **Servomotor** (0–180°, Signal **D9**)
+
+Hinweis: **MPU6050 AD0** mit **VCC** verbinden, damit der Sensor **0x69** nutzt und der **DS3231** **0x68** frei bleibt.
 
 ### Steckplatine und Schaltplan
 
@@ -197,4 +201,4 @@ Alle Komponenten sind vorkonfiguriert. Pins und Bibliotheken sind fest im GPT ei
 
 ---
 
-*Folkwang Universität der Künste · Workshop Interaktive Systeme*
+*Folkwang Universität der Künste · Timers Workshop*

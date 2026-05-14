@@ -1,6 +1,6 @@
 # Setup — Schritt für Schritt (Einsteiger)
 
-Bevor du Code auf den **ESP32** überträgst, richtest du einmalig deinen Computer ein. Das dauert etwa **15–20 Minuten** und musst du nur einmal machen.
+Bevor du Code auf den **Arduino Nano** überträgst, richtest du einmalig deinen Computer ein. Das dauert etwa **15–20 Minuten** und musst du nur einmal machen.
 
 ---
 
@@ -10,8 +10,8 @@ Bevor du Code auf den **ESP32** überträgst, richtest du einmalig deinen Comput
 |------|--------|
 | **Git** | Wird von **PlatformIO** gebraucht, um Bibliotheken von GitHub zu laden. |
 | **Visual Studio Code (VS Code)** | Der Editor für deinen Code. |
-| **PlatformIO** | Erweiterung in VS Code: baut das Projekt, lädt Bibliotheken, lädt den Code auf den ESP32. |
-| **USB-Treiber** | Damit Windows/macOS den ESP32 am USB-Kabel erkennt. |
+| **PlatformIO** | Erweiterung in VS Code: baut das Projekt, lädt Bibliotheken, lädt den Code auf den Arduino Nano. |
+| **USB-Treiber** | Damit Windows/macOS den Arduino Nano am USB-Kabel erkennt. |
 
 ---
 
@@ -37,7 +37,7 @@ VS Code ist der **Editor**, in dem du Code bearbeitest und Uploads startest.
 
 ## Schritt 3 — PlatformIO in VS Code installieren
 
-**PlatformIO** ist eine **Erweiterung** in VS Code. Sie kümmert sich um Bibliotheken, Compiler und den **Upload zum ESP32**.
+**PlatformIO** ist eine **Erweiterung** in VS Code. Sie kümmert sich um Bibliotheken, Compiler und den **Upload zum Arduino Nano**.
 
 1. **VS Code** öffnen.
 2. Links auf das Symbol **Erweiterungen** klicken (vier Quadrate).
@@ -53,13 +53,9 @@ Nach der Installation siehst du links das **PlatformIO-Symbol** (Kopf einer Amei
 
 ## Schritt 4 — USB-Treiber installieren
 
-Der ESP32 spricht über einen **USB-zu-UART-Chip** mit dem PC. Dafür braucht das Betriebssystem einen **Treiber**.
+Der Arduino Nano spricht über einen **USB-zu-UART-Chip** mit dem PC. Dafür braucht das Betriebssystem einen **Treiber**.
 
-Workshop-Boards nutzen oft den Chip **CP210x** (Silicon Labs).
-
-1. Öffne: [Silicon Labs — USB to UART Bridge VCP Drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
-2. Unter **Downloads** das Paket für **Windows** oder **macOS** wählen, installieren.
-3. Danach den **Computer neu starten** (empfohlen).
+Workshop-Nanos nutzen häufig **CH340G** oder **FT232**; manche Clones **CP2102**. Installiere den Treiber, den dein Geräte-Manager oder die Board-Beschreibung nennt (z. B. [WCH CH341/CH340](http://www.wch-ic.com/downloads/CH341SER_ZIP.html) oder [Silicon Labs CP210x](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)).
 
 ### macOS (Ventura und neuer)
 
@@ -74,7 +70,7 @@ Wenn kein **COM-Port** erscheint: **Geräte-Manager** öffnen — unter **Anschl
 
 ### Kurztest
 
-1. ESP32 per **USB** anschließen.
+1. Arduino Nano per **USB** anschließen.
 2. In VS Code unten in der **blauen Leiste** sollte ein Port erscheinen, z. B. `COM3` (Windows) oder `/dev/cu.usbserial-…` (macOS).  
    Wenn ja: Treiber passt.
 
@@ -91,9 +87,9 @@ So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
 2. In VS Code: **Datei → Ordner öffnen** → genau diesen Ordner **`code`** wählen (der enthält die `platformio.ini`).
 3. PlatformIO erkennt das Projekt und lädt beim ersten Mal die Bibliotheken — wieder **einige Minuten** warten.
 
-### Code auf den ESP32 laden (Upload)
+### Code auf den Arduino Nano laden (Upload)
 
-1. ESP32 per USB angeschlossen lassen.
+1. Arduino Nano per USB angeschlossen lassen.
 2. Unten in der blauen Leiste auf den **Pfeil nach rechts** (**Upload**) klicken — oder in der PlatformIO-Seitenleiste **Upload**.
 3. Im **Terminal** unten siehst du den Ablauf. Erfolg endet oft mit **`SUCCESS`**.
 
@@ -101,7 +97,7 @@ So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
 
 1. Unten auf das **Stecker-Symbol** (**Serial Monitor**) klicken.
 2. **Baudrate:** `115200` wählen (steht auch in der Workshop-`platformio.ini`).
-3. Du siehst Textausgaben vom ESP32 (z. B. WLAN- oder Sensorstatus).
+3. Du siehst Textausgaben vom Arduino Nano (z. B. Sensor- oder Zeitstatus).
 
 ---
 
@@ -112,7 +108,7 @@ So prüfst du, ob **alles zusammenspielt**, bevor du mit dem Workshop startest.
 | Build meldet fehlende Bibliotheken | **Git** nicht installiert oder nicht im PATH | Schritt 1 wiederholen, VS Code neu starten |
 | Kein Projektordner | Workshop-Dateien fehlen | Repository klonen oder ZIP von GitHub entpacken |
 | Kein USB-Port sichtbar | Treiber oder Kabel | Schritt 4, anderes USB-Kabel (Daten) |
-| `No device found on port` | Falscher Port oder ESP32 nicht verbunden | Port in PlatformIO manuell wählen |
+| `No device found on port` | Falscher Port oder Arduino Nano nicht verbunden | Port in PlatformIO manuell wählen |
 | Upload schlägt fehl | Falscher Port | Unten in der Leiste anderen COM-Port wählen |
 | Sehr langer erster Build | Normal | Internet anlassen, 2–5 Minuten warten |
 

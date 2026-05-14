@@ -1,55 +1,21 @@
-# Beispiel 01 · Geste steuert Licht
+# 01 · Uhrzeit auf dem OLED
 
-## Die Idee
+Dieses Beispiel zeigt den **Timers Workshop**-Workflow: eine kurze Beschreibung an **Folkwang_Timers**, der generierte **Arduino-Nano**-Code mit **DS3231** und **SSD1306**, Upload und Test.
 
-Eine Handbewegung über den Sensor lässt alle sechs LEDs aufleuchten. Keine Geste — kein Licht. Das Board reagiert lokal, ohne Netzwerk.
+## Idee
 
----
+Die aktuelle Uhrzeit soll **groß auf dem OLED** erscheinen — Ausgangspunkt für Installationen, die **Zeit** sichtbar machen.
 
-## Schritt 1 · GPT-Anfrage
+## Hardware
 
-**→ [Prompt ansehen](./prompt.md)**
+- Arduino Nano, DS3231, SSD1306 (128×64, I²C), gemeinsamer Bus **A4/A5**.
 
-Der verwendete Prompt beschreibt die Idee in einem Satz. Keine technischen Details, keine Pin-Nummern — nur das gewünschte Verhalten.
+## Ablauf
 
-Der GPT antwortet mit zwei Dateien: `main.cpp` und `platformio.ini`.
+1. Prompt formulieren (siehe `prompt.md`).  
+2. Antwort in PlatformIO (`code/`) übernehmen — `pio run`, Upload.  
+3. Beobachten: läuft die Uhr plausibel? (Einmalige Zeiteinstellung mit `rtc.adjust(...)` im Code möglich.)
 
----
+## Ergebnis
 
-## Schritt 2 · Code in PlatformIO
-
-Die beiden Dateien aus dem GPT-Output werden in die folgende Struktur eingefügt:
-
-```
-code/
-├── platformio.ini
-└── src/
-    └── main.cpp
-```
-
-Der fertige Code liegt bereits unter [`code/`](./code/) — er kann direkt geöffnet und verwendet werden.
-
-In VSCode: **Datei → Ordner öffnen → `code/`**
-
-PlatformIO lädt beim ersten Build automatisch alle Bibliotheken.
-
----
-
-## Schritt 3 · Upload und Test
-
-1. ESP32 anschließen
-2. Upload-Button (→) in der Statusleiste klicken
-3. Warten bis `SUCCESS` erscheint
-4. Hand über den APDS9960 halten → LEDs leuchten auf
-
----
-
-## Was passiert im Hintergrund
-
-Der APDS9960 erkennt eine Geste und setzt den Wert auf `1.0`. Der NeoPixel-Strip empfängt diesen Wert und leuchtet mit maximaler Helligkeit. Wenn keine Geste erkannt wird, bleibt der Wert bei `0.0` — die LEDs bleiben aus.
-
-Das Board ist nicht im WLAN — es arbeitet vollständig lokal. Das PairLink-System ist zwar im Code vorhanden, aber inaktiv.
-
----
-
-→ Weiter: [Beispiel 02 · Bewegung steuert Servo](../beispiel_02_bewegung_servo/README.md)
+Der Ordner `code/` enthält ein lauffähiges **Nano**-Projekt passend zu `template-platformio.ini` des Workshops.

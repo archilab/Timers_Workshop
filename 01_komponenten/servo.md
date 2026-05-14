@@ -26,9 +26,9 @@ Ein Servo ist ein Motor, der sich auf einen bestimmten Winkel dreht und dort hä
 
 ## Anschluss
 
-- Signalleitung → GPIO 12
+- Signalleitung → **D9** (digital Pin 9)
 
-Bibliothek: `ESP32Servo`
+Bibliothek: Arduino **`Servo`** (mit `#include <Servo.h>`), **kein** ESP32Servo.
 
 ---
 
@@ -37,6 +37,4 @@ Bibliothek: `ESP32Servo`
 | Ressource | Link |
 |---|---|
 | SG90 Servo Datenblatt | [servodatabase.com/SG90](https://servodatabase.com/servo/towerpro/sg90) |
-| ESP32Servo Library (GitHub) | [github.com/madhephaestus/ESP32Servo](https://github.com/madhephaestus/ESP32Servo) |
-| ESP32Servo Library (PlatformIO) | [registry.platformio.org](https://registry.platformio.org/libraries/madhephaestus/ESP32Servo) |
 | Arduino Servo-Grundlagen | [docs.arduino.cc/libraries/servo](https://docs.arduino.cc/libraries/servo/) |

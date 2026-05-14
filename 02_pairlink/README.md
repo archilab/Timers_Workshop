@@ -1,28 +1,21 @@
-# 02 · PairLink
+# 02 · Zeit und I²C-Bus
 
-PairLink ist das Herzstück der Netzwerkfunktion im Workshop. Es ermöglicht, zwei ESP32-Geräte miteinander zu verbinden — ohne jede Konfiguration, ohne Wissen über Netzwerktechnik.
+Im **Timers Workshop** arbeiten alle Sensoren und das OLED-Display am **gemeinsamen I²C-Bus** des **Arduino Nano** (**A4 = SDA**, **A5 = SCL**). Die **DS3231** liefert verlässliche **Uhrzeit und Datum** — sie eignet sich als Taktgeber für zeitbasierte Installationen und für die Anzeige auf dem **SSD1306**.
+
+> **Hinweis:** Es gibt **kein WLAN** und **kein PairLink** mehr. Alle Beispiele laufen **lokal auf einem Nano**.
 
 ---
 
 ## Die Grundidee
 
-Ein Gerät misst etwas (Sensor). Ein anderes Gerät reagiert darauf (Aktor). PairLink sorgt dafür, dass der Wert des ersten Geräts über WLAN beim zweiten ankommt.
-
-```
-Gerät A                          Gerät B
-─────────────────────────────────────────────
-Sensor misst Wert   →→→  WLAN  →→→  Aktor reagiert
-        0.0 – 1.0                    0.0 – 1.0
-```
-
-Das ist bidirektional: Beide Geräte können gleichzeitig senden und empfangen.
+**Zeit** (RTC) und **Messwerte** (Abstand, Neigung, Temperatur) werden im `loop()` gelesen, verarbeitet und auf **OLED**, **NeoPixel** oder **Servo** ausgegeben. Die genauen Pins und Adressen stehen in [`claude_pathfinder/.claude/rules/02-hardware-pins.md`](../claude_pathfinder/.claude/rules/02-hardware-pins.md).
 
 ---
 
-## [Das sensor.value Prinzip](./konzept.md)
+## [Uhrzeit und Anzeige](./konzept.md)
 
-Alle Werte fließen über einen einzigen Kanal: `sensor.value`. Warum das so einfach ist — und was dahintersteckt.
+Wie RTC und OLED zusammenarbeiten — und warum der **MPU6050** im Workshop an **0x69** hängt.
 
-## [Netzwerk einrichten](./netzwerk.md)
+## [I²C-Bus und Adressen](./netzwerk.md)
 
-Wie WLAN und WebSocket-Server für den Workshop konfiguriert sind.
+Geräte am Bus, Spannungspegel und typische Fehler — **ohne** Netzwerkkonfiguration.

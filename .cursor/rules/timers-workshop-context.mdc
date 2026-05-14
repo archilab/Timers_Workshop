@@ -1,0 +1,25 @@
+---
+description: Timers Workshop (Folkwang) — Nano, RTC, ToF, OLED; canonical docs in claude_pathfinder
+alwaysApply: true
+---
+
+# Timers Workshop context
+
+This repository is the **Timers Workshop** (Folkwang Universität der Künste): **Arduino Nano**, **PlatformIO (Arduino)**, and fixed hardware — **DS3231 RTC**, **VL53L0X**, **SSD1306** 128×64 OLED, **MPU6050** (I²C **0x69**), **NeoPixel** (6× RGBW on **D6**), **servo** (**D9**). Stack is **local only** (no WiFi / PairLink). Custom GPT: **Folkwang_Timers**.
+
+## Language
+
+Workshop prose may be **German**. Code comments may be German or English.
+
+## Normative docs
+
+1. [claude_pathfinder/CLAUDE.md](claude_pathfinder/CLAUDE.md) and [claude_pathfinder/.claude/rules/](claude_pathfinder/.claude/rules/)
+2. [claude_pathfinder/.context/rules-meta-layer.md](claude_pathfinder/.context/rules-meta-layer.md) and [rules-validation.md](claude_pathfinder/.context/rules-validation.md)
+3. [claude_pathfinder/.context/context-library-index.md](claude_pathfinder/.context/context-library-index.md) and `context-library-*.md`
+4. [claude_pathfinder/.claude/rules/03-i2c-time-display.md](claude_pathfinder/.claude/rules/03-i2c-time-display.md)
+5. `sample-*.cpp` in `.context/` are **patterns only**; rules override samples.
+
+## Build
+
+- `pio run` next to `platformio.ini`
+- Serial: **115200**
