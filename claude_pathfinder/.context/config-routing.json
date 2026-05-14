@@ -1,0 +1,16 @@
+{
+  "sensor_map": {
+    "gesture": "apds9960",
+    "motion": "mpu6050",
+    "distance": "apds9960",
+    "light": "apds9960",
+    "lux": "apds9960",
+    "color": "apds9960",
+    "als": "apds9960",
+    "temperature": "mpu6050",
+    "temp": "mpu6050"
+  },
+  "fallback": {
+    "sensor": "gesture"
+  }
+}

@@ -1,0 +1,6 @@
+bblanchon/ArduinoJson@^7.2.2
+adafruit/Adafruit APDS9960 Library
+adafruit/Adafruit NeoPixel@^1.12.5
+https://github.com/archilab/Pairlink-library
+adafruit/Adafruit Unified Sensor@^1.1.15
+gilmaimon/ArduinoWebsockets@^0.5.4

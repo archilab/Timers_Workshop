@@ -1,0 +1,42 @@
+# PlatformIO
+
+## Required includes (typical sketch header)
+
+```cpp
+#include <Arduino.h>
+#include <PairLink.h>
+#include <Wire.h>
+#include <ESP32Servo.h>
+#include <Adafruit_NeoPixel.h>
+#include <Adafruit_APDS9960.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+```
+
+Include only what the sketch uses.
+
+## `lib_deps` (strict — keep in sync)
+
+```
+https://github.com/archilab/Pairlink-library
+gilmaimon/ArduinoWebsockets@^0.5.4
+bblanchon/ArduinoJson@^7.2.2
+adafruit/Adafruit APDS9960 Library
+adafruit/Adafruit Unified Sensor@^1.1.15
+adafruit/Adafruit NeoPixel@^1.12.5
+madhephaestus/ESP32Servo@^3.0.8
+adafruit/Adafruit MPU6050
+```
+
+## Environment template
+
+```ini
+[env:esp32dev]
+platform = espressif32
+board = esp32dev
+framework = arduino
+monitor_speed = 115200
+lib_deps = ...
+```
+
+Copy from [`template-platformio.ini`](../../.context/template-platformio.ini) when creating new projects.
