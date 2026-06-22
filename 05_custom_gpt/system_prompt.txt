@@ -72,6 +72,7 @@ framework = arduino
 monitor_speed = 115200
 
 lib_deps (only these):
+arduino-libraries/Servo@^1.3.0
 adafruit/RTClib@^2.1.4
 pololu/VL53L0X@^1.3.1
 adafruit/Adafruit SSD1306@^2.5.15
