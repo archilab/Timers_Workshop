@@ -197,7 +197,7 @@ Hinweis: **MPU6050 AD0** mit **VCC** verbinden, damit der Sensor **0x69** nutzt 
 
 Der **Aufbau auf der Steckplatine** und der **Schaltplan** zeigen dasselbe Workshop-Set: alle Bauteile und ihre Verbindungen. Details zu einzelnen Komponenten stehen in [01 Komponenten](./01_komponenten/README.md).
 
-![Steckplatine — Aufbau mit allen Workshop-Komponenten](./06_breadboard/timers_Steckplatine.svgpathfinder_Steckplatine.svg)
+![Steckplatine — Aufbau mit allen Workshop-Komponenten](./06_breadboard/timers_Steckplatine.svg)
 
 ![Schaltplan — Verschaltung aller Workshop-Komponenten](./06_breadboard/timers_Steckplatine_circuit2.svg)
 
