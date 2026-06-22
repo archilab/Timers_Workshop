@@ -4,7 +4,7 @@
 
 Im Workshop sitzt ein **NeoPixel LED Ring 5V RGB WS2812B** mit **12** einzeln ansteuerbaren **RGB-LEDs**. Jede „Einheit“ am Ring heißt im Code ein **Pixel** — nummeriert von **0** bis **11**. Man kann jede LED in Farbe und Helligkeit setzen, unabhängig von den anderen.
 
-Die **Datenleitung** geht am Nano an **D6** (digitaler Ausgang), festgelegt in `02-hardware-pins.md`.
+Die **Datenleitung** geht am Nano an **D10** (digitaler Ausgang), festgelegt im Master Prompt / `02-hardware-pins.md`.
 
 ---
 
@@ -42,7 +42,7 @@ Die **Datenleitung** geht am Nano an **D6** (digitaler Ausgang), festgelegt in `
 
 | Anschluss | Nano / Hinweis |
 |-----------|----------------|
-| Daten (**DIN** / **DI** / **Data**) | **D6** |
+| Daten (**DIN** / **DI** / **Data**) | **D10** |
 | **5V** / **VCC** | **5V** (Strombedarf beachten — bei vielen LEDs lieber externes 5V mit gemeinsamer **GND**) |
 | **GND** | **GND** (gemeinsame Masse mit dem Nano) |
 

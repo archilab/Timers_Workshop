@@ -148,9 +148,11 @@ Custom GPTs von OpenAI liefern signifikant bessere Ergebnisse, wenn man als Nutz
 
 **[→ Folkwang_Timers Custom GPT direkt öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)**
 
-Zum **Nachbauen oder Erweitern** eines eigenen GPT: Trainingsdateien aus [`Dataset_Timers/`](./Dataset_Timers/) bzw. [`Dataset_Timers.zip`](./Dataset_Timers.zip) als Wissen einbinden 
+Zum **Nachbauen oder Erweitern** eines eigenen GPT: **[Master Prompt](./Dataset_Timers/Arduino_Nano_MasterPrompt.md)** in die Anweisungen, [`Dataset_Timers/`](./Dataset_Timers/) bzw. [`Dataset_Timers.zip`](./Dataset_Timers.zip) als Wissen — siehe [05 Custom GPT](./05_custom_gpt/README.md).
 
-**[→ Custom GPT Dataset (ZIP)](./Dataset_Timers.zip)** — System Prompt + Trainingsdateien
+**[→ Custom GPT Dataset (ZIP)](./Dataset_Timers.zip)** — Master Prompt, Library-Kontext, Beispiel-Sketches
+
+Der GPT liefert **didaktische Vollantworten** (Verdrahtung, `platformio.ini`, `main.cpp`, **RTC SETTIME**, Troubleshooting) — nicht nur Code-Schnipsel.
 
 ---
 
@@ -186,7 +188,7 @@ Kein manuelles Programmieren. Kein Verständnis von Syntax notwendig.
 - **VL53L0X** Time-of-Flight (Distanz mm, I²C)  
 - **SSD1306** OLED 128×64 (I²C)  
 - **MPU6050** (Bewegung, Lage, On-Chip-Temperatur; im Workshop-Adressschema **0x69**)  
-- **NeoPixel** LED-Ring 5V RGB WS2812B (**12** Pixel, Datenpin **D6**, `NEO_GRB + NEO_KHZ800`)  
+- **NeoPixel** LED-Ring 5V RGB WS2812B (**12** Pixel, Datenpin **D10**, `NEO_GRB + NEO_KHZ800`)  
 - **Servomotor** (0–180°, Signal **D9**)
 
 Hinweis: **MPU6050 AD0** mit **VCC** verbinden, damit der Sensor **0x69** nutzt und der **DS3231** **0x68** frei bleibt.

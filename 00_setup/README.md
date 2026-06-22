@@ -15,7 +15,7 @@ Der **Timers Workshop** arbeitet **lokal** auf einem **Arduino Nano (ATmega328P,
 | **VL53L0X** (Abstand) | I²C A4/A5 | Adresse **0x29**, Werte in **mm** |
 | **SSD1306** (OLED 128×64) | I²C A4/A5 | Adresse **0x3C** (manchmal **0x3D**) |
 | **MPU6050** (Bewegung) | I²C A4/A5 | Adresse **0x69** — **AD0 → VCC** |
-| **NeoPixel-Ring** (12× WS2812B RGB) | Daten **D6** | `NEO_GRB + NEO_KHZ800` |
+| **NeoPixel-Ring** (12× WS2812B RGB) | Daten **D10** | `NEO_GRB + NEO_KHZ800` |
 | **Servo** | Signal **D9** | Arduino-**Servo**-Library (nicht ESP32Servo) |
 
 **Gemeinsame Masse:** Alle Module mit **GND** am Nano verbinden. **5V**-Versorgung je nach Modul (viele Breakouts: **VCC** an **5V**).

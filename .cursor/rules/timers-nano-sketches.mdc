@@ -13,7 +13,7 @@ Deliver **complete** `setup()` / `loop()` and `platformio.ini` when generating a
 - `Wire.begin()` before I²C device `begin()` when using I²C.
 - MPU6050 at **0x69** (`mpu.begin(0x69, &Wire, 0)`); DS3231 uses **0x68**.
 - `Serial.begin(115200)` when helpful.
-- Pins: NeoPixel **D6**, Servo **D9**, I²C **A4/A5** (see `02-hardware-pins.md`).
+- Pins: NeoPixel **D10**, Servo **D9**, I²C **A4/A5** (see `02-hardware-pins.md`).
 
 ## Never
 

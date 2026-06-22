@@ -9,7 +9,7 @@ Quelle: [Adafruit_NeoPixel.h](https://github.com/adafruit/Adafruit_NeoPixel/blob
 
 ## Workshop-Festlegung (Referenz)
 
-- **NeoPixel LED Ring 5V RGB WS2812B**, **12** Pixel, **Pin D6** (digital 6), **`NEO_GRB + NEO_KHZ800`**
+- **NeoPixel LED Ring 5V RGB WS2812B**, **12** Pixel, **Pin D10** (digital 10), **`NEO_GRB + NEO_KHZ800`**
 - Kein RGBW-/Weißkanal: Helligkeit über gleiche Werte **R=G=B** oder `setBrightness()`.
 
 ---

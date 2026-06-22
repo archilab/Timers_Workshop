@@ -5,7 +5,7 @@
 
 VL53L0X sensor;
 constexpr uint16_t kNeoPixelCount = 12;
-constexpr uint8_t kNeoPixelPin = 6;
+constexpr uint8_t kNeoPixelPin = 10;
 Adafruit_NeoPixel strip(kNeoPixelCount, kNeoPixelPin, NEO_GRB + NEO_KHZ800);
 
 void setup() {

@@ -2,13 +2,15 @@
 
 **Öffentlicher Workshop-GPT:** [Folkwang_Timers in ChatGPT öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)
 
-Der System Prompt dieses Workshops ist öffentlich — damit man ihn als Vorlage für einen eigenen Custom GPT verwenden kann. Hier ist der Prozess Schritt für Schritt.
+Der **Master Prompt** dieses Workshops ist öffentlich — damit man einen eigenen Custom GPT nach dem **Timers Workshop**-Modell anlegen kann.
+
+**Quellen:** [`system_prompt.txt`](./system_prompt.txt) · [`Arduino_Nano_MasterPrompt.md`](../Dataset_Timers/Arduino_Nano_MasterPrompt.md) · Erläuterung: [`system_prompt_erklaert.md`](./system_prompt_erklaert.md)
 
 ---
 
 ## Voraussetzung
 
-Voraussetzung ist ein ChatGPT-Account mit Zugang zu **ChatGPT Plus** (kostenpflichtig). Nur Plus-Nutzer können Custom GPTs erstellen und veröffentlichen.
+ChatGPT-Account mit **ChatGPT Plus** (kostenpflichtig). Nur Plus-Nutzer können Custom GPTs erstellen und veröffentlichen.
 
 ---
 
@@ -16,73 +18,75 @@ Voraussetzung ist ein ChatGPT-Account mit Zugang zu **ChatGPT Plus** (kostenpfli
 
 1. Auf [chatgpt.com](https://chatgpt.com) einloggen
 2. Oben links auf den eigenen Namen klicken
-3. **"Meine GPTs"** wählen
-4. **"GPT erstellen"** klicken
+3. **„Meine GPTs“** wählen
+4. **„GPT erstellen“** klicken
 
 ---
 
-## Schritt 2 · System Prompt eingeben
+## Schritt 2 · Master Prompt einfügen
 
-Im GPT Editor gibt es zwei Tabs: **Erstellen** (geführter Chat) und **Konfigurieren** (direkter Zugriff).
+Im GPT Editor: Tab **Konfigurieren** → Feld **Anweisungen**.
 
-Zu **Konfigurieren** wechseln.
+Den **gesamten** Inhalt von [`system_prompt.txt`](./system_prompt.txt) (oder [`Arduino_Nano_MasterPrompt.md`](../Dataset_Timers/Arduino_Nano_MasterPrompt.md)) einfügen.
 
-Dort findet man das Feld **"Anweisungen"** — das ist der System Prompt. Hier kann man:
+Der Prompt definiert u. a.:
 
-- Den Prompt aus [`system_prompt.txt`](./system_prompt.txt) einfügen und anpassen
-- Eigene Regeln hinzufügen oder bestehende ändern
-
----
-
-## Schritt 3 · Anpassen an die eigene Hardware
-
-Wenn man andere Komponenten, andere Pins oder andere Bibliotheken verwendet, sind diese Abschnitte anzupassen:
-
-**Hardware ändern:**
-```
-HARDWARE RULES
-EIGENER_SENSOR → GPIO X
-EIGENER_AKTOR  → GPIO Y
-```
-
-**Bibliotheken ändern:**
-```
-LIBRARIES (STRICT)
-#include <EigeneBibliothek.h>
-
-LIB_DEPS (STRICT)
-autor/EigeneBibliothek@^version
-```
-
-**Kernprinzip anpassen:**
-Das `LOCAL: Sensor → Actor` / `PAIRED: ...` Prinzip kann auf andere Protokolle übertragen werden — z.B. MQTT, OSC, oder BLE.
+- Nur **Arduino Nano ATmega328P**
+- Feste Pins (**NeoPixel D10**, **Servo D9**, I²C **A4/A5**)
+- **11-teiliges** Antwortformat (Verdrahtung, Code, RTC, Didaktik)
+- Pflicht-**RTC** mit **`SETTIME YYYY-MM-DD HH:MM:SS`**
 
 ---
 
-## Schritt 4 · Testen
+## Schritt 3 · Knowledge hochladen
 
-Bevor man den GPT veröffentlicht, sollte man ihn mit den gleichen Prompts testen, die man in echten Workshops verwenden würde:
+Unter **Wissen** die Dateien aus [`Dataset_Timers/`](../Dataset_Timers/) (oder [`Dataset_Timers.zip`](../Dataset_Timers.zip)) hochladen — mindestens:
 
-- Einfache Anfrage: funktioniert der Code sofort?
-- Grenzfall: reagiert der GPT sinnvoll wenn die Anfrage unklar ist?
-- Unerlaubte Anfrage: bleibt er in seiner Rolle wenn jemand etwas anderes verlangt?
+- `template-platformio.ini`
+- `context-library-index.md` und `context-library-*.md`
+- `rules-meta-layer.md`, `rules-validation.md`
+
+Upload-Reihenfolge: [`context-example-scripts.md`](../Dataset_Timers/context-example-scripts.md)
 
 ---
 
-## Schritt 5 · Veröffentlichen
+## Schritt 4 · Hardware anpassen (optional)
 
-Im GPT Editor oben rechts: **Speichern → Nur ich / Link teilen / Öffentlich**
+Wenn man **andere** Pins oder Boards nutzt, im Master Prompt den Abschnitt **FIXED HARDWARE CONFIGURATION** und **PLATFORMIO** anpassen — und die Knowledge-Dateien (`02-hardware-pins` im Agent-Bundle) entsprechend spiegeln.
 
-Mit einem geteilten Link können andere sofort mit dem GPT arbeiten — ohne ihn installieren zu müssen.
+**Timers Workshop Standard:**
+
+| Bauteil | Pin / Bus |
+|---------|-----------|
+| NeoPixel-Ring | **D10** |
+| Servo | **D9** |
+| I²C-Sensoren/Display | **A4**, **A5** |
+
+---
+
+## Schritt 5 · Testen
+
+Vor der Veröffentlichung mit Workshop-Prompts testen:
+
+- Liefert der GPT **alle 11 Abschnitte** inkl. Verdrahtung?
+- Enthalten **`platformio.ini`** und **`src/main.cpp`** **`nanoatmega328`**?
+- Ist **SETTIME** in **RTC Setup** dokumentiert?
+- Bleibt der GPT bei **Nano** (kein ESP32)?
+
+---
+
+## Schritt 6 · Veröffentlichen
+
+GPT Editor oben rechts: **Speichern → Nur ich / Link teilen / Öffentlich**
 
 ---
 
 ## Was man verändern kann — und was nicht
 
 | Änderung | Empfehlung |
-|---|---|
-| Hardware-Pins | Unbedingt anpassen, wenn man andere Boards verwendet |
-| Bibliotheken | Nur durch stabile, getestete Versionen ersetzen |
-| Kernprinzip (0.0–1.0) | Beibehalten — das macht den GPT verlässlich |
-| NEVER-Regeln | Eher ergänzen als entfernen |
-| Output-Format | Anpassen an das eigene Tool-Setup (z.B. Arduino IDE statt PlatformIO) |
+|----------|------------|
+| Hardware-Pins | Nur anpassen, wenn die echte Platine abweicht |
+| `lib_deps` | Nur getestete Versionen aus `template-platformio.ini` |
+| 11-teiliges Output-Format | Beibehalten — didaktischer Kern des Workshops |
+| RTC **SETTIME** | Beibehalten — keine Auto-Überschreibung der Uhr |
+| ESP32 / WiFi | Nicht hinzufügen (widerspricht dem Master Prompt) |

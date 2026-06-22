@@ -1,6 +1,6 @@
 # Example scripts — Custom GPT integration (Timers Workshop)
 
-**Pfad:** `claude_pathfinder/.context/`. Normative contract: **`../.claude/rules/07-generator-contract.md`** (**Folkwang_Timers**) plus **`00`–`06`**.
+**Pfad:** `Dataset_Timers/` (Knowledge für **Folkwang_Timers**). Normativer Vertrag: **`Arduino_Nano_MasterPrompt.md`** / **`system-prompt.txt`**; im Repo zusätzlich **`claude_pathfinder/.claude/rules/07-generator-contract.md`** plus **`00`–`06`**.
 
 Die **`sample-*.cpp`** sind **Muster**; Regeln und **`context-library-*.md`** haben Vorrang.
 
@@ -21,7 +21,7 @@ Die **`sample-*.cpp`** sind **Muster**; Regeln und **`context-library-*.md`** ha
 | **`sample-vl53-neopixel.cpp`** | VL53L0X → NeoPixel-Helligkeit |
 | **`sample-time-window-actuator.cpp`** | RTC-Fenster + Distanz → Servo |
 | **`sample-mpu6050-servo.cpp`** | MPU6050 @0x69 → Servo D9 |
-| **`sample-neopixel-actor.cpp`** | NeoPixel D6 Demo |
+| **`sample-neopixel-actor.cpp`** | NeoPixel D10 Demo |
 
 ## Konventionen
 
@@ -30,12 +30,13 @@ Die **`sample-*.cpp`** sind **Muster**; Regeln und **`context-library-*.md`** ha
 
 ## Upload-Reihenfolge (Knowledge „Folkwang_Timers“)
 
-1. `../.claude/rules/07-generator-contract.md` + `00`–`06` + `03-i2c-time-display.md`
+1. **`Arduino_Nano_MasterPrompt.md`** oder **`system-prompt.txt`** (wenn nicht schon in ChatGPT-Anweisungen)
 2. `rules-meta-layer.md`, `rules-validation.md`
 3. `context-library-index.md` + alle `context-library-*.md`
-4. `context-example-scripts.md`
-5. `config-routing.json`
-6. `template-platformio.ini` + `sample-*.cpp`
+4. `template-platformio.ini`
+5. `sample-*.cpp`, `config-routing.json` (zuletzt)
+
+*(Für Claude/Cline im Repo: `.claude/rules/07-generator-contract.md` + `00`–`06` + `03-i2c-time-display.md`.)*
 
 ## `config-routing`
 

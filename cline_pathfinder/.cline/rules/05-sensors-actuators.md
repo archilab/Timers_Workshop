@@ -25,7 +25,7 @@ Full API: [`context-library-index.md`](../../.context/context-library-index.md).
 
 ## NeoPixel (WS2812B RGB ring)
 
-- **`Adafruit_NeoPixel strip(12, 6, NEO_GRB + NEO_KHZ800);`**
+- **`Adafruit_NeoPixel strip(12, 10, NEO_GRB + NEO_KHZ800);`**
 - **`strip.begin();`** then **`setPixelColor`** / **`show()`**.
 
 ## Servo (Arduino)

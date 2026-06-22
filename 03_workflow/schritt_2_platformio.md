@@ -1,6 +1,6 @@
 # Schritt 2 · Code in PlatformIO einsetzen
 
-Der GPT hat zwei Dateien geliefert: `main.cpp` und `platformio.ini`. Beide müssen in ein PlatformIO-Projekt eingefügt werden.
+Der GPT hat u. a. **`main.cpp`** und **`platformio.ini`** geliefert (oft in einem längeren Antworttext mit Verdrahtung und RTC-Hinweisen). Beide müssen in ein PlatformIO-Projekt eingefügt werden.
 
 ---
 

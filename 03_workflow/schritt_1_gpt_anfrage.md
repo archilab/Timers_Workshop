@@ -10,16 +10,18 @@ Das Custom GPT **Folkwang_Timers** öffnet man in ChatGPT (Link oben). Wenn man 
 
 ## Was der GPT braucht
 
-Der GPT erzeugt Code für den **Arduino Nano** mit den Workshop-Komponenten. Sinnvolle Anfragen enthalten:
+Der GPT erzeugt **vollständige Workshop-Projekte** für den **Arduino Nano** — nicht nur Code, sondern u. a. **Verdrahtung**, **`platformio.ini`**, **`src/main.cpp`**, **RTC-Setup** und **Troubleshooting** (siehe [Master Prompt](../Dataset_Timers/Arduino_Nano_MasterPrompt.md)). Sinnvolle Anfragen enthalten:
 
 **1. Was ist der Eingang?**  
 Zeit (RTC), Abstand (VL53L0X), Neigung/Bewegung (MPU6050), ggf. Kombination.
 
 **2. Was ist der Ausgang?**  
-OLED-Text, NeoPixel, Servo.
+OLED-Text, NeoPixel-Ring (**D10**), Servo (**D9**).
 
 **3. Wie hängen sie zusammen?**  
 Schwellen, Zeitfenster, „je näher desto …“, „nur nach 18 Uhr …“.
+
+Nach dem ersten Upload: Uhrzeit per Serial mit **`SETTIME YYYY-MM-DD HH:MM:SS`** setzen (115200 Baud) — siehe Abschnitt **RTC Setup** in der GPT-Antwort.
 
 ---
 

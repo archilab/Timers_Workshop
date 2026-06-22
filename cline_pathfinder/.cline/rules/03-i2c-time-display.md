@@ -6,12 +6,26 @@
 - Initialize **`Wire.begin()`** before **`rtc.begin()`**, display, VL53L0X, or MPU6050.
 - If a device fails `begin()`, print a clear **`Serial`** message with the expected address.
 
-## DS3231 (RTClib)
+## DS3231 (RTClib) — mandatory in generated projects
 
 - Typical types: **`RTC_DS3231 rtc;`**
 - **`rtc.begin()`** — returns false if module missing.
-- Set time once in lab: **`rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));`** only when appropriate, or document user setting via compile time.
+- **Never** call **`rtc.adjust(DateTime(F(__DATE__), F(__TIME__)))`** automatically on every boot — that overwrites user-set time.
 - Read: **`DateTime now = rtc.now();`** — use **`now.hour()`**, **`now.minute()`**, **`now.unixtime()`**, etc.
+
+### SETTIME via Serial (Master Prompt)
+
+At **`Serial.begin(115200)`**, parse lines from the Serial Monitor:
+
+```
+SETTIME YYYY-MM-DD HH:MM:SS
+```
+
+Example: **`SETTIME 2026-06-22 15:30:00`**
+
+On valid input: **`rtc.adjust(DateTime(year, month, day, hour, minute, second))`** and confirm on Serial (and optionally OLED).
+
+Document in **RTC Setup** and **First Startup Procedure** that the user sets time once with **SETTIME**, not by re-flashing with a new compile time.
 
 ## SSD1306 (128×64 I²C)
 
