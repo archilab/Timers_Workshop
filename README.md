@@ -170,7 +170,7 @@ Kein manuelles Programmieren. Kein Verständnis von Syntax notwendig.
 
 | Abschnitt | Inhalt |
 |---|---|
-| [00 Setup](./00_setup/README.md) | Git, VS Code, PlatformIO, Treiber — die Installation notwendiger Komponenten Schritt für Schritt erklärt |
+| [00 Setup](./00_setup/README.md) | Git, VS Code, PlatformIO, Treiber, **Arduino Nano** — Installation und erster Test (RTC + OLED) |
 | [01 Komponenten](./01_komponenten/README.md) | Alle elektronischen Bauteile im Detail erklärt |
 | [02 Zeit und I²C-Bus](./02_pairlink/README.md) | Echtzeit, I²C-Bus, Adressen — **kein** WLAN/PairLink mehr |
 | [03 Workflow](./03_workflow/README.md) | Der Workflow im Detail · [Beispielprompts](./03_workflow/pathfinder_prompts.md) · [Prompt-Baukasten](./03_workflow/prompt_patterns_baukasten.md) |

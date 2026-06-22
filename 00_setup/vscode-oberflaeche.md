@@ -2,6 +2,8 @@
 
 VS Code bietet viele Symbole und Menüs — für den Einstieg kann das überladen wirken. Die Oberfläche kann man **schrittweise anpassen**, ohne die Funktion zu verlieren. Die folgenden Abschnitte zeigen das mit **Screenshots** aus dem Workshop.
 
+**Kontext:** Im **Timers Workshop** arbeitet man mit **PlatformIO** und einem **Arduino Nano** — Upload und **Serial Monitor (115200)** laufen über die **untere Statusleiste** und das **PlatformIO-Symbol** (Ameise) links.
+
 **Hinweis:** Diese Schritte **nach** der Installation von [Visual Studio Code](./README.md#schritt-2--visual-studio-code-installieren) und idealerweise **nach** [PlatformIO](./README.md#schritt-3--platformio-in-vs-code-installieren) ausführen, damit man die wichtigsten Symbole (z. B. Erweiterungen, PlatformIO) noch erkennt.
 
 ---
@@ -28,18 +30,21 @@ Die **Aktivitätsleiste** ist die vertikale Leiste ganz links (Dateien, Suche, G
 
 ![Aktivitätsleiste: Rechtsklick zum Ein- und Ausblenden von Symbolen](./VSC_screenshots/VSC_clean_Aktivitätsleiste.png)
 
-Mindestens **Dateien** und **Erweiterungen** (und nach Installation **PlatformIO**) sollte man behalten, damit der Workshop-Workflow nicht blockiert wird.
+Mindestens **Dateien** und **Erweiterungen** (und nach Installation **PlatformIO**) sollte man behalten, damit der Workshop-Workflow (Nano-Upload, Bibliotheken) nicht blockiert wird.
 
 ---
 
 ## Untere Toolbar (Statusleiste) aufräumen
 
-Die **Statusleiste** unten zeigt u. a. Port, Zeilenende und Sprache. Auch hier hilft der **Rechtsklick**: Man blendet nur die Anzeigen ein, die man braucht — z. B. **COM-Port** und **PlatformIO** für Upload und Serial Monitor.
+Die **Statusleiste** unten zeigt u. a. **COM-Port**, Zeilenende und Sprache. Auch hier hilft der **Rechtsklick**: Man blendet nur die Anzeigen ein, die man braucht — z. B. **COM-Port** (Arduino Nano) und **PlatformIO** für **Upload** und **Serial Monitor**.
 
 ![Statusleiste unten: per Rechtsklick Einträge reduzieren](./VSC_screenshots/VSC_clean_toolbar.png)
+
+**Upload:** Pfeil **→** in der Statusleiste. **Serial Monitor:** Stecker-Symbol, Baudrate **115200** (wie in der Workshop-`platformio.ini`).
 
 ---
 
 ## Zurück zum Setup
 
-- [Setup — Schritt für Schritt](./README.md)
+- [Setup — Schritt für Schritt](./README.md) (Git, PlatformIO, Nano-Treiber, erstes Beispielprojekt)
+- [01 Komponenten](../01_komponenten/README.md) (DS3231, VL53L0X, OLED, MPU6050, NeoPixel-Ring, Servo)
