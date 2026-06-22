@@ -19,4 +19,4 @@ Dieser Ordner enthält **Knowledge**-Dateien für ein Custom GPT mit dem Namen *
 
 Agent-Regeln im Repo: **`claude_pathfinder/.claude/rules/07-generator-contract.md`** (Spiegel des Master Prompts + Workshop-Details).
 
-ZIP für Teilnehmer: [`Dataset_Timers.zip`](../Dataset_Timers.zip) im [README der Wurzel](../README.md) — bei Bedarf neu packen nach Änderungen.
+Teilnehmer laden den Ordner **`Dataset_Timers/`** direkt als Knowledge in ChatGPT hoch (siehe [05 Custom GPT](../05_custom_gpt/README.md)).

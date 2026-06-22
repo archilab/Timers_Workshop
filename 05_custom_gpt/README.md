@@ -12,6 +12,5 @@ Der Custom GPT **Folkwang_Timers** ist ein **didaktischer Arduino-Nano-Projektge
 | **[`system_prompt_erklaert.md`](./system_prompt_erklaert.md)** | Erläuterung für Lehrende |
 | **[`eigenen_gpt_erstellen.md`](./eigenen_gpt_erstellen.md)** | Eigenes GPT nachbauen |
 | **[`Dataset_Timers/`](../Dataset_Timers/)** | Knowledge-Dateien + [`Arduino_Nano_MasterPrompt.md`](../Dataset_Timers/Arduino_Nano_MasterPrompt.md) |
-| **[`Dataset_Timers.zip`](../Dataset_Timers.zip)** | ZIP zum Hochladen *(nach Änderungen neu packen)* |
 
 **→ [context-example-scripts.md](../Dataset_Timers/context-example-scripts.md)** — Upload-Reihenfolge ins GPT-Wissen.

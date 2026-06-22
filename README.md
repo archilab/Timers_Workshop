@@ -148,9 +148,7 @@ Custom GPTs von OpenAI liefern signifikant bessere Ergebnisse, wenn man als Nutz
 
 **[→ Folkwang_Timers Custom GPT direkt öffnen](https://chatgpt.com/g/g-6a05cf109af481918718831969e45905-folkwang-timers)**
 
-Zum **Nachbauen oder Erweitern** eines eigenen GPT: **[Master Prompt](./Dataset_Timers/Arduino_Nano_MasterPrompt.md)** in die Anweisungen, [`Dataset_Timers/`](./Dataset_Timers/) bzw. [`Dataset_Timers.zip`](./Dataset_Timers.zip) als Wissen — siehe [05 Custom GPT](./05_custom_gpt/README.md).
-
-**[→ Custom GPT Dataset (ZIP)](./Dataset_Timers.zip)** — Master Prompt, Library-Kontext, Beispiel-Sketches
+Zum **Nachbauen oder Erweitern** eines eigenen GPT: **[Master Prompt](./Dataset_Timers/Arduino_Nano_MasterPrompt.md)** in die Anweisungen, Dateien aus [`Dataset_Timers/`](./Dataset_Timers/) als Wissen hochladen — siehe [05 Custom GPT](./05_custom_gpt/README.md).
 
 Der GPT liefert **didaktische Vollantworten** (Verdrahtung, `platformio.ini`, `main.cpp`, **RTC SETTIME**, Troubleshooting) — nicht nur Code-Schnipsel.
 
@@ -197,7 +195,7 @@ Hinweis: **MPU6050 AD0** mit **VCC** verbinden, damit der Sensor **0x69** nutzt 
 
 Der **Aufbau auf der Steckplatine** und der **Schaltplan** zeigen dasselbe Workshop-Set: alle Bauteile und ihre Verbindungen. Details zu einzelnen Komponenten stehen in [01 Komponenten](./01_komponenten/README.md).
 
-![Steckplatine — Aufbau mit allen Workshop-Komponenten](./06_breadboard/timers_Steckplatine.svg)
+![Steckplatine — Aufbau mit allen Workshop-Komponenten](./06_breadboard/timers_v4_Steckplatine.svg)
 
 ![Schaltplan — Verschaltung aller Workshop-Komponenten](./06_breadboard/timers_Steckplatine_circuit2.svg)
 

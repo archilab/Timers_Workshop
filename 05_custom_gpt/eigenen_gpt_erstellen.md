@@ -40,7 +40,7 @@ Der Prompt definiert u. a.:
 
 ## Schritt 3 · Knowledge hochladen
 
-Unter **Wissen** die Dateien aus [`Dataset_Timers/`](../Dataset_Timers/) (oder [`Dataset_Timers.zip`](../Dataset_Timers.zip)) hochladen — mindestens:
+Unter **Wissen** die Dateien aus [`Dataset_Timers/`](../Dataset_Timers/) hochladen — mindestens:
 
 - `template-platformio.ini`
 - `context-library-index.md` und `context-library-*.md`
